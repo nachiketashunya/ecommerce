@@ -5,8 +5,9 @@ from products.models import Product
 
 # Create your models here.
 
-class WishlistManager(models.Manager):
-	def new_or_get(self, request):
+#manager to control wishlist products 
+class WishlistManager(models.Manager):  #inherits the Manager class 
+	def new_or_get(self, request):  #function to get new or old objects in wishlist
 		wishlist_id = request.session.get('wishlist_id')
 		qs = self.get_queryset().filter( id = wishlist_id)
 
@@ -45,10 +46,10 @@ class WishlistManager(models.Manager):
 
 		return self.model.objects.create( user = user_obj)
 
-
+#model to store wishilist products 
 class Wishlist(models.Model):
 	user = models.ForeignKey(UserProfile , null = True , blank = True , on_delete = models.CASCADE)
 	products = models.ManyToManyField(Product , blank = True)
-	objects = WishlistManager()
+	objects = WishlistManager()  #manager to control wishlist objects
 
 
