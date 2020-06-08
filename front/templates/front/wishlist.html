@@ -1,0 +1,59 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<div class="row">
+		{% if object.products.all %}
+
+		{% for product in object.products.all %}
+
+		<div class="card mb-0" style="max-width: 415px; margin-right: 12px; margin-left:10px; margin-top:10px;">
+		  <div class="row no-gutters">
+		    <div class="col-md-4">
+		      <img src="{{ product.image.url }}" class="card-img" alt="..." width="100%;" >
+		    </div>
+		    <div class="col-md-8">
+		      <div class="card-body">
+		        <h6 class="card-title">{{ product.title }} </h6>
+		        <p style="font-size: 12px;">{{ product.description }} </p>
+		        <p class="card-text" style="font-size: 15px;"> <strong>&#8377; {{ product.price }}</strong></p>
+		        <div class="card-footer text-center">
+		        	<a href="/productdetails/{{ product.id }}" class="btn btn-primary btn-sm checkout-button" style="float: right; font-size: 13px;"> View Details</a>
+
+		        	<form method="POST" action="/cart/cartupdate/">
+		        		{% csrf_token %}
+
+		        		<input type="hidden" name="product_id" value="{{ product.id }}">
+
+		        		{% if product in cart.products.all %}
+
+		        		<button type="submit" class="btn btn-danger btn-sm" style="float: left; font-size: 13px;"> Remove ? </button>
+
+		        		{% else %}
+
+		        		<button type="submit" class="btn btn-success btn-sm" style="float: left; font-size: 13px;"> Add to Cart</button>
+
+		        		{% endif %}
+		        	</form>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		{% endfor %}
+
+		{% else %}
+
+			<div class="card" style="margin-left: 30px;">
+			    <div class="card-body">
+				  	<div>
+				    	<b><a href="/productpage"> Add product to your wishlist </a> </b>
+				    </div> 
+				</div>
+			</div>	
+
+		{% endif %}
+
+</div>
+
+{% endblock %}

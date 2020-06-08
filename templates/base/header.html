@@ -1,0 +1,21 @@
+<div class = 'row'>
+	<div class = "col-md-12">
+		<div class="main-header">
+		    
+
+		    {% for category in category %}
+
+		    <div class="dropdown">
+				<button class="dropbtn"> {{ category.category_name }}</button>
+				<div class="dropdown-content">
+					<a href="/productpage" id="dropdown-item"> Clothing </a>
+					<a href="/productpage" id="dropdown-item"> Footwear </a>
+				</div>
+			</div>
+
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+

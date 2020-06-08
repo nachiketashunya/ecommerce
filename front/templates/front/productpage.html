@@ -1,0 +1,65 @@
+{% extends 'base/base.html' %}
+{% block content %}
+{% load humanize %}
+
+<div class="row">
+    <div class="col-md-3">
+    	<p style="margin-left: 5px;"><a href="/productpage"> All </a></p>
+    	{% for subcategory in subcategory %}
+
+    	<p style="margin-left: 5px;">
+    		<a href="/productcategoryview/{{subcategory.id}}" id="subcategory-item">
+	    		{{subcategory.category_name}} - 
+	    		{{subcategory.subcategory_name}}
+    		</a>
+    	</p>
+
+    	{% endfor %}
+
+    </div>
+    <div class="col-md-9">
+    	<div class="row">
+			{% for product in products %}
+			<div class="col-md-3">
+				<div class="card" style="width: 100%; margin-top: 7px;">
+					<img src="{{product.image.url}}" class="card-img-top" alt="...">
+					<div class="card-body">
+					    <h6 class="card-title" style="font-size: 15px;">{{product.title|truncatewords:3}}</h6>
+					    	
+					    <!-- truncatewords , truncate the words by specified value -->
+					    <p class="card-text" style="font-size: 14px; ">{{product.description|truncatewords:2 }} </p>
+					    <p class="card-text"><strong class="product-price"> &#8377; {{product.price|intcomma }} </strong></p>
+					    <a href="/productdetails/{{product.id}}">
+						    <button class="btn btn-primary btn-sm" style="display: inline-block; float: left; font-size: 12px;">
+						    	View Details 
+						    </button>
+					    </a>
+
+					    <form method="POST" action = "/wishlist_update/">
+					    	{% csrf_token %}
+
+					    	<input type="hidden" name="next" value="{{ next_url }}">
+
+					    	<input type="hidden" name="product_id" value="{{ product.id }}">
+
+					    	{% if not product in object.products.all %}
+
+					    	<button class="btn btn-success btn-sm" style="display: inline-block; float: right; font-size: 12px;"> Wishlist </button>
+
+					    	{% else %}
+
+					    	<button class="btn btn-danger btn-sm" style="display: inline-block; float: right;
+					    	font-size: 12px;"> Wishlisted </button>
+
+					    	{% endif %}
+					    </form>
+					</div>
+		        </div>
+		    </div>
+		    {% endfor %}
+	 	</div>
+    </div>
+</div>
+
+
+{% endblock %}

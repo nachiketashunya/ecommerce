@@ -1,0 +1,54 @@
+#body {
+	padding-left: 20%;
+	padding-right: 20%;
+
+}
+
+#about-header {
+	background-color: rgba(44 , 4, 75 , 0.3);
+}
+
+
+.header-text {
+	border-bottom: 2px solid #000000;
+	padding-left: 8px;
+
+}
+
+
+#text {
+	padding-left: 10%;
+	padding-right: 10%;
+	font-size: 125%;
+	text-align: justify;
+	line-height : 1.5em;
+	font-family: "Josefin Sans" , sans-serif ;
+
+}
+
+.areas-list {
+	margin-left: 20%;
+}
+
+.areas-item {
+	font-family: "Times New Roman" ,monospace;
+	letter-spacing: 0.09em;
+}
+
+strong.about-text {
+	font-style: italic;
+}
+
+.about-text {
+	min-width: 100px;
+}
+
+div.prime-box {
+	border: 1px solid #000;
+	padding-left: 30px;
+	width: 50%;
+}
+
+div.prime-content {
+	padding: 20px;
+}

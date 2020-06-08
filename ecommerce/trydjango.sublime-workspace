@@ -1,0 +1,1057 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"form",
+				"form_class"
+			],
+			[
+				"Cra",
+				"CreateProductForm"
+			],
+			[
+				"Create",
+				"CreateView"
+			],
+			[
+				"product",
+				"product_detail"
+			],
+			[
+				"get",
+				"get_object_or_404"
+			],
+			[
+				"max",
+				"max_length"
+			],
+			[
+				"cache",
+				"cache_page"
+			],
+			[
+				"profile",
+				"profile_form"
+			],
+			[
+				"profil",
+				"profile_form"
+			],
+			[
+				"User",
+				"UserProfile"
+			],
+			[
+				"conf",
+				"confirm_new_password"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"Passw",
+				"PasswordInput"
+			],
+			[
+				"dropdo",
+				"dropdown-divider"
+			],
+			[
+				"margin",
+				"margin-left\tproperty"
+			],
+			[
+				"border",
+				"border\tproperty"
+			],
+			[
+				"paddin",
+				"padding\tproperty"
+			],
+			[
+				"shad",
+				"shape-outside\tproperty"
+			],
+			[
+				"btn",
+				"btn-block"
+			],
+			[
+				"padding",
+				"padding\tproperty"
+			],
+			[
+				"rgb",
+				"rgba()\tbackground-color"
+			],
+			[
+				"subcategory",
+				"subcategory_name"
+			],
+			[
+				"text-deco",
+				"text-decoration-line\tproperty"
+			],
+			[
+				"box",
+				"box-shadow\tproperty"
+			],
+			[
+				"text",
+				"text-decoration\tproperty"
+			],
+			[
+				"wishi",
+				"wishlist_obj"
+			],
+			[
+				"font",
+				"font-family\tproperty"
+			],
+			[
+				"hsl",
+				"hsla()\tbackground-color"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"Use",
+				"UserProfileImage"
+			],
+			[
+				"upload",
+				"upload_profile_image"
+			],
+			[
+				"De",
+				"DESIGNATION_CHOICE"
+			],
+			[
+				"questio",
+				"question_id"
+			],
+			[
+				"boo",
+				"Book"
+			],
+			[
+				"inline",
+				"inline-block\tdisplay"
+			],
+			[
+				"cards",
+				"cards_qs"
+			],
+			[
+				"defaul",
+				"default_cards"
+			],
+			[
+				"border-to",
+				"border-top\tproperty"
+			],
+			[
+				"is",
+				"is_safe_url"
+			],
+			[
+				"add",
+				"address_type"
+			],
+			[
+				"ship",
+				"shipping_address"
+			],
+			[
+				"bl",
+				"billing_profile"
+			],
+			[
+				"next",
+				"next_"
+			],
+			[
+				"billing",
+				"billing_address"
+			],
+			[
+				"address",
+				"address_type"
+			],
+			[
+				"check",
+				"checkout_address_reuse"
+			],
+			[
+				"shipping",
+				"Shipping"
+			],
+			[
+				"redi",
+				"redirect_path"
+			],
+			[
+				"sub",
+				"subcategory"
+			],
+			[
+				"subcatego",
+				"subcategory"
+			],
+			[
+				"BAS",
+				"BASE_DIR"
+			],
+			[
+				"bse",
+				"base_name"
+			],
+			[
+				"bradn",
+				"brand_name"
+			],
+			[
+				"subca",
+				"subcategory_name"
+			],
+			[
+				"for",
+				"ForeignKey"
+			],
+			[
+				"brand",
+				"brand_name"
+			],
+			[
+				"cate",
+				"category_name"
+			],
+			[
+				"bill",
+				"billing_profile"
+			],
+			[
+				"card",
+				"card_qs"
+			],
+			[
+				"Bi",
+				"BillingProfileManager"
+			],
+			[
+				"str",
+				"stripe_card_response"
+			],
+			[
+				"exp",
+				"exp_year"
+			],
+			[
+				"strip",
+				"stripe_id"
+			],
+			[
+				"auto",
+				"auto_now_add"
+			],
+			[
+				"redir",
+				"redirect"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"shi",
+				"shipping_address"
+			],
+			[
+				"cart",
+				"cart_obj"
+			],
+			[
+				"order",
+				"order_obj"
+			],
+			[
+				"bil",
+				"billing_profile_created"
+			],
+			[
+				"shippin",
+				"shipping_address"
+			],
+			[
+				"o",
+				"objects"
+			],
+			[
+				"addre",
+				"address_type"
+			],
+			[
+				"bi",
+				"BillingProfile"
+			],
+			[
+				"ch",
+				"checkout_address_reuse"
+			],
+			[
+				"new",
+				"new_obj"
+			],
+			[
+				"rev",
+				"reviews"
+			],
+			[
+				"id",
+				"product_id"
+			],
+			[
+				"Order",
+				"OrderManager"
+			],
+			[
+				"post",
+				"post_save_cart_total"
+			],
+			[
+				"pre",
+				"pre_save_create_order_id"
+			],
+			[
+				"Bilin",
+				"BillingProfile"
+			],
+			[
+				"Address",
+				"ADDRESS_TYPE"
+			],
+			[
+				"redire",
+				"redirect_path"
+			],
+			[
+				"red",
+				"redirect_path"
+			],
+			[
+				"gues",
+				"guest_form"
+			],
+			[
+				"gue",
+				"guest_form"
+			],
+			[
+				"guest",
+				"guest_register"
+			],
+			[
+				"ne",
+				"next_url"
+			],
+			[
+				"billi",
+				"billing_profile"
+			],
+			[
+				"background",
+				"background-color\tproperty"
+			],
+			[
+				"Cart",
+				"CartManager"
+			],
+			[
+				"uer",
+				"user_obj"
+			],
+			[
+				"m2",
+				"m2m_changed_cart_reciever"
+			],
+			[
+				"col",
+				"col-xs-12"
+			],
+			[
+				"Re",
+				"ReviewForm"
+			],
+			[
+				"revie",
+				"reviewed_by"
+			],
+			[
+				"car",
+				"card-text"
+			],
+			[
+				"bran",
+				"brand_name"
+			],
+			[
+				"uplo",
+				"upload_product_image"
+			],
+			[
+				"project",
+				"projectstatic"
+			],
+			[
+				"med",
+				"Media_ROOT"
+			],
+			[
+				"su",
+				"subcategory_name"
+			],
+			[
+				"textal",
+				"text-align\tproperty"
+			],
+			[
+				"hobbies",
+				"hobbies"
+			],
+			[
+				"screen",
+				"screen_type"
+			],
+			[
+				"cost",
+				"cost_OFmonitor"
+			],
+			[
+				"discou",
+				"discounted_price"
+			],
+			[
+				"class_",
+				"class_11"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "from django.db import models\n\n# Create your models here.\n\nclass Product(models.Model):\n\ttitle = models.CharField(max_length = 128) # max_length == required \n\tdescription = models.TextField()\n\tprice = models.DecimalField(max_digits = 20 , decimal_places = 2) # max_digits, decimal_places are required\n\tsummary = models.TextField()\n\tfeatured = models.BooleanField( default = True )\n\n\n\tdef __str__(self):      # magic function , converts model object into string \n\t\treturn self.title \n\n\tdef get_absolute_url(self, )\n\nclass Category(models.Model):\n\tcategory_name  = models.CharField(max_length = 128 , primary_key = True) # it'll be the primary key\n\n\t\n",
+			"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/models.py",
+			"file_size": 637,
+			"file_write_time": 132335817206429002,
+			"settings":
+			{
+				"buffer_size": 648,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/urls.py",
+			"settings":
+			{
+				"buffer_size": 588,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/views.py",
+			"settings":
+			{
+				"buffer_size": 1587,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/templates/product/list.html",
+			"settings":
+			{
+				"buffer_size": 237,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/templates/product/create.html",
+			"settings":
+			{
+				"buffer_size": 205,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/forms.py",
+			"settings":
+			{
+				"buffer_size": 204,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/templates/product/product_detail.html",
+			"settings":
+			{
+				"buffer_size": 152,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/templates/home.html",
+			"settings":
+			{
+				"buffer_size": 127,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Nachiketa/Desktop/mydjango",
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango",
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango/product",
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/templates",
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/templates/product",
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango/templates",
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango/trydjango"
+	],
+	"file_history":
+	[
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango/trydjango/settings.py",
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/admin.py",
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango/templates/home.html",
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/models.py",
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/views.py",
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/urls.py",
+		"/C/Users/Nachiketa/Desktop/mydjango/trydjango/trydjango/urls.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/front/models.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/front/apps.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/static/css/base.css",
+		"/C/Users/Nachiketa/Desktop/ecommerce/ecommerce/settings.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/accounts/views.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/front/views.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/templates/base/about.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/static/css/aboutus.css",
+		"/C/Users/Nachiketa/Desktop/ecommerce/accounts/forms.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/accounts/templates/accounts/login.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/accounts/urls.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/accounts/templates/accounts/edit_profile.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/templates/base/navbar.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/accounts/templates/accounts/update.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/static/css/navbar.css",
+		"/C/Users/Nachiketa/Desktop/ecommerce/front/context_processors.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/static/css/header.css",
+		"/C/Users/Nachiketa/Desktop/ecommerce/cart/templates/cart/cart.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/db.sqlite3",
+		"/C/Users/Nachiketa/Desktop/ecommerce/front/templates/front/productpage.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/templates/base/css.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/templates/base/base.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/templates/base/footer.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/front/urls.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/templates/base/header.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/products/models.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/static/css/success.css",
+		"/C/Users/Nachiketa/Desktop/ecommerce/static/css/footer.css",
+		"/C/Users/Nachiketa/Desktop/ecommerce/accounts/templates/accounts/register_user.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/front/templates/front/wishlist.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/templates/base/aboutus.css",
+		"/C/Users/Nachiketa/Desktop/ecommerce/accounts/models.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/front/templates/front/profile.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/templates/base/footerr.css",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/templates/polls/register.html",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/models/__init__.py",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/models/bookstore.py",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/models/blog.py",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/models/choice.py",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/views.py",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/templates/polls/detail.html",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/admin.py",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/polls/models/__init__.py",
+		"/C/Users/Nachiketa/Desktop/mysite/mysite/settings.py",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/polls/models/choice.py",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/polls/models/question.py",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/models.py",
+		"/C/Users/Nachiketa/Desktop/mysite/polls/migrations/0005_auto_20200403_1259.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/templates/base/myproject.css",
+		"/C/Users/Nachiketa/Desktop/ecommerce/ecommerce/urls.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/cart/urls.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/front/templates/front/productdetails.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/cart/templates/cart/checkout.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/billing/templates/billing/payment_method.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/billing/views.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/billing/models.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/front/templates/front/profile.html",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/accounts/forms.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/front/views.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/templates/base/navbar.html",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/templates/base/js.html",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/templates/base/base.html",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/front/urls.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/cart/templates/cart/checkout.html",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/address/views.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/address/urls.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/cart/views.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/address/admin.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/address/forms.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/practice_ecommerce/urls.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/billing/models.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/order/models.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/practice_ecommerce/settings.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/cart/templates/cart/cart.html",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/front/templates/front/productdetails.html",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/cart/models.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/templates/base/header.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/cart/models.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/search/views.py",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/front/templates/front/productpage.html",
+		"/C/Users/Nachiketa/Desktop/practice_ecommerce/product/admin.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/templates/base/js.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/billing/urls.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/address/urls.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/cart/views.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/address/models.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/order/models.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/order/admin.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/address/views.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/ecommerce/utils.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/cart/admin.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/address/forms.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/address/admin.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/billing/admin.py",
+		"/G/e_commerce-20200116T121049Z-001/e_commerce/accounts/views.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/front/templates/front/home.html",
+		"/C/Users/Nachiketa/Desktop/shunya/gumantu/templates/gumantu/user_login.html",
+		"/C/Users/Nachiketa/Desktop/shunya/gumantu/forms.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/front/templates/front/snippet/updatecart.html",
+		"/C/Users/Nachiketa/Desktop/ecommerce/products/migrations/0003_auto_20200111_1331.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/search/urls.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/products/forms.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/products/admin.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/products/views.py",
+		"/C/Users/Nachiketa/Downloads/Pillow-7.0.0-cp35-cp35m-win32.whl",
+		"/C/Users/Nachiketa/Desktop/ecommerce/home/models.py",
+		"/C/Users/Nachiketa/Desktop/shunya/gumantu/views.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/accounts/templates/accounts/index.html",
+		"/C/Users/Nachiketa/Desktop/precentage.py",
+		"/C/Users/Nachiketa/Desktop/sampleproject/home/templates/home/studentlist.html",
+		"/C/Users/Nachiketa/Desktop/sampleproject/home/views.py",
+		"/C/Users/Nachiketa/Desktop/sampleproject/home/urls.py",
+		"/C/Users/Nachiketa/Desktop/sampleproject/sampleproject/urls.py",
+		"/C/Users/Nachiketa/Desktop/sampleproject/sampleproject/settings.py",
+		"/C/Users/Nachiketa/Desktop/sampleproject/home/models.py",
+		"/C/Users/Nachiketa/Desktop/sampleproject/home/admin.py",
+		"/C/Users/Nachiketa/Desktop/integration_training/day 8 classes/restaurant.py",
+		"/C/Users/Nachiketa/Desktop/ecommerce/home/admin.py",
+		"/C/Users/Nachiketa/Desktop/againsample/home/admin.py",
+		"/C/Users/Nachiketa/Desktop/againsample/againsample/settings.py",
+		"/C/Users/Nachiketa/Desktop/againsample/home/models.py"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 648,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								511,
+								511
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 588,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								107,
+								107
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1587,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1012,
+								1012
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/templates/product/list.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 237,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								209,
+								209
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/templates/product/create.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 205,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								177,
+								177
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/forms.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 204,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								91,
+								91
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/product/templates/product/product_detail.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 152,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								132,
+								132
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/C/Users/Nachiketa/Desktop/mydjango/trydjango/templates/home.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 127,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 193.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "trydjango.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 165.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

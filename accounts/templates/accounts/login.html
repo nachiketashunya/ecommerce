@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<div class = "row">
+
+    <div class = "col-md-4 login-box">
+        <div style = "box-shadow : 7px 7px 7px 7px #aaa; padding : 50px;">
+        	{% if messages %}
+	            <div class="messages-container">
+	            	{% for message in messages %}
+	            	<div class="success-message"> {{ message }} </div>  <!-- this will show the message -->
+	            	{% endfor %}
+	            </div>
+	        {% endif %}
+	        
+            <form method = "POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <input type = "submit" value = "Log In" class="btn-block btn-success" id = "login-button"/>
+
+            </form>
+
+
+            <div class="or-separator"> OR </div>
+
+            <div class="registration-link">
+                <p class="registration-link" >
+                    <a href="/registration" class="registration-link"> Create an account </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

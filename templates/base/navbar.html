@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-custom" >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div id = "header" style="margin-right: 20px;">
+        <h1 class="header"><a href = "/" class="header-link">Ecommerce</a></h1>
+    </div>
+    <form class="form-inline my-2 my-lg-0" action="/search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name = "search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+    <ul class="navbar-nav mr-auto" style="margin-left: 45%;">
+      {% if 'username' not in request.session %}
+
+      <li class="nav-item profile-dropdown" style="color : #fff;">
+        <div class="profile-dropdown">
+        
+          <div class="profile-dropbtn"> <i class="far fa-user fa-lg"> </i></div>
+          <div class="profile-dropdown-content">
+
+              <a href = "/login" id="profile-dropdown-item"> Login </a>
+              <a href="/registration" id="profile-dropdown-item"> Register </a>
+          </div>
+        </div>
+          
+      </li>
+
+      {% endif %}
+
+    
+      {% if 'username' in request.session %}
+
+      <li class="nav-item profile-dropdown" style="color : #fff;">
+        <div class="profile-dropdown">
+        
+          <div class="profile-dropbtn"> <i class="far fa-user fa-lg"> </i></div>
+          <div class="profile-dropdown-content">
+              <a href = "/profile" id="dropdown-item" style="font-size: 16px;"> {{ user_data.name }}   </a>
+              <div class="dropdown-divider"></div>
+              <a href="/wishlist" id="dropdown-item"> My Wishlist</a>
+              <a href="/cart" id="dropdown-item"> My Cart </a>
+              <div class="dropdown-divider"></div>
+              <a href="/updatepassword" id="dropdown-item"> Update Password </a>
+              <a href="/logout" id="dropdown-item"> Log out  </a>
+          </div>
+        </div>
+          
+      </li>
+
+      {% endif %}
+      <li class="nav-item" style="margin-left: 10px;">
+        <a class="nav-link" href="/cart">
+          <span style="margin-top: -10px; font-size: 8px;" class="badge badge-danger"> {{ request.session.cart_items }}</span>
+          <i class="fa fa-shopping-cart fa-lg"> </i>
+
+        </a>
+      </li>
+
+
+    </ul>
+   
+  </div>
+</nav>

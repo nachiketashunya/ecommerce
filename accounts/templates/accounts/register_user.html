@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<div class = "row">
+
+    <div class = "col-md-6">
+        <div style = "box-shadow : 10px 10px 10px #aaa; padding : 50px;">
+        	
+
+            <form method = "POST" enctype="multipart/form-data">
+                
+                {% csrf_token %}  <!-- csrf == cross site request forgery -->
+                {{ forms.as_p }}  <!-- as_p == show form as paragraph -->
+
+                
+
+                <input type = "submit" value = "Register" class="btn btn-warning" style="background-color: grey; color: white; float: right;" />
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

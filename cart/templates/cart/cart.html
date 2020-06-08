@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<div class="row">
+	<div class="col-md-6">
+		<table class="table">
+		  <thead>
+		    <tr>
+		      <th scope="col">S No.</th>
+		      <th scope="col" colspan="2">Product Details</th>
+		      <th scope="col">Product Price</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for product in cart.products.all %}
+		    <tr>
+		      <th scope="row">{{ forloop.counter }} .</th>
+		      <td><a href="/productdetails/{{product.id}}"><img src="{{product.image.url}}" width="50px" height="50px"></a></td>
+		      <td><a href="/productdetails/{{product.id}}">{{ product.title }}</a></td>
+		      <td> &#8377; {{ product.price }}</td>
+		    </tr>
+
+		    {% endfor %}
+		    <tr>
+		    	<td colspan="2"></td>
+		    	<td> <b>Subtotal :</b> </td>
+		    	<td>  &#8377; {{cart.subtotal}} </td>
+		    </tr>
+
+		    <tr>
+		     	<td colspan="2"></td>
+		     	<td> <b>Total (Subtotal + 10% Tax) : </b></td>
+		    	<td> 
+		    		<span> &#8377; {{cart.total}} </span>
+		    	</td>
+		    </tr>
+
+		    <tr>
+		    	<td colspan="3">  </td>
+		    	<td>
+		    		<a href="/cart/checkout" class="btn btn-success" style="color: #FFF;">Checkout</a> 
+		    	</td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+</div>
+
+
+{% endblock %}
