@@ -14,7 +14,6 @@ urlpatterns = [
 	path('wishlist_update/', views.wishlist_update),
 	path('profile/' , views.profile),
 	path('aboutus/' , views.about_us),
-	path('header_products/<id>', views.header_products),
 
 
 	# Class Based Urls 

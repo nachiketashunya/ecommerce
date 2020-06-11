@@ -1,8 +1,9 @@
 {% extends 'base/base.html' %}
 {% block content %}
 
+<!-- object is key for wishlist_obj -->
 <div class="row">
-		{% if object.products.all %}
+		{% if object.products.all %} <!-- checking for existence -->
 
 		{% for product in object.products.all %}
 
@@ -19,10 +20,12 @@
 		        <div class="card-footer text-center">
 		        	<a href="/productdetails/{{ product.id }}" class="btn btn-primary btn-sm checkout-button" style="float: right; font-size: 13px;"> View Details</a>
 
+		        	<!-- to add product in cart -->
+
 		        	<form method="POST" action="/cart/cartupdate/">
 		        		{% csrf_token %}
 
-		        		<input type="hidden" name="product_id" value="{{ product.id }}">
+		        		<input type="hidden" name="product_id" value="{{ product.id }}"> <!-- product_id is always sent with hidden type -->
 
 		        		{% if product in cart.products.all %}
 
@@ -41,6 +44,8 @@
 		</div>
 
 		{% endfor %}
+
+		<!-- if no product exists in wishlist -->
 
 		{% else %}
 

@@ -1,6 +1,8 @@
 {% extends 'base/base.html' %}
 {% block content %}
 
+<!-- this HTML page gets information about card and process it. It includes JS and Ajax so it must be understod after learning
+  JS. -->
 
 <style>
 
@@ -169,9 +171,9 @@ function stripeTokenHandler(token) {
         method: "POST",
 
         success: function(data){
-            
+
                alert(" Card Successfully added")
-               
+
             redirectToNext(nextUrl,1500)
 
         },

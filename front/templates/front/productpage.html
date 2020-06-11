@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 {% block content %}
-{% load humanize %}
+{% load humanize %}  <!-- to user human friendly content -->
 
 <div class="row">
     <div class="col-md-3">
@@ -27,6 +27,7 @@
 					    <h6 class="card-title" style="font-size: 15px;">{{product.title|truncatewords:3}}</h6>
 					    	
 					    <!-- truncatewords , truncate the words by specified value -->
+
 					    <p class="card-text" style="font-size: 14px; ">{{product.description|truncatewords:2 }} </p>
 					    <p class="card-text"><strong class="product-price"> &#8377; {{product.price|intcomma }} </strong></p>
 					    <a href="/productdetails/{{product.id}}">
@@ -40,7 +41,7 @@
 
 					    	<input type="hidden" name="next" value="{{ next_url }}">
 
-					    	<input type="hidden" name="product_id" value="{{ product.id }}">
+					    	<input type="hidden" name="product_id" value="{{ product.id }}"> <!-- this will be used in view function -->
 
 					    	{% if not product in object.products.all %}
 

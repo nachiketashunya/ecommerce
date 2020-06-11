@@ -1,8 +1,8 @@
 {% extends 'base/base.html' %}
 {% block content %}
 
-{% if not billing_profile %}
- 
+{% if not billing_profile %}  <!-- if billing profile is not set then LoginForm and GuestForm will be shown -->
+
 <div class="row">
 	<div class="col-md-6">
 		<h1> Login </h1>
@@ -10,7 +10,7 @@
 			{% csrf_token %}
 			{{loginform.as_p}}
 
-			<input type="hidden" value="{{next_url}}" name="next">  <!-- Sending next_url to view function -->
+			<input type="hidden" value="{{next_url}}" name="next">  <!-- Sending next_url to view function, this will redirect to checkout page-->
 			<input type="submit" value="Login" class="btn btn-success" style="float: right;">
 		</form>
 	</div>
@@ -22,10 +22,10 @@
 			{% csrf_token %}
 			{{guestform.as_p}}
 
-			<input type="hidden" value="{{next_url}}" name="next">
+			<input type="hidden" value="{{next_url}}" name="next"> <!-- this will redirect to checkout page -->
 
 			<input type="submit" value="Login" class="btn btn-success" style="float: right;">
-			
+
 		</form>
 	</div>
 </div>
@@ -39,32 +39,31 @@
 		<h1>Shipping Address </h1>
 		<br>
 
-		<form  method = "POST" action="/checkout_address/">
+		<form  method = "POST" action="/checkout_address/">	<!-- this form is submitted to checkout_address view function -->
 			{% csrf_token %}
 			{{ addressform.as_p }}
 
 			{% if address_type %}
-			<input type="hidden" name = "address_type" value="{{ address_type }}"> <!-- This address_type we get from 
-																						cart.views -->
+			<input type="hidden" name = "address_type" value="{{ address_type }}"> <!-- This address_type we get from cart.views -->
 
 			{% endif %}
 
 			<input type="hidden" name="next" value="{{ next_url }}">
 			<input type="submit" value="Submit" class="btn btn-success" style="float: right;">
-
 		</form>
 
 	</div>
 
-	<div class="col-md-6">
+	<div class="col-md-6"> <!-- we want to show this functionality along with address form that's why we use this inside col-md-6 -->
 		{% if address_qs.exists %}  <!-- address query in cart.views -->
 
 		<form method="POST" action="/checkout_address_reuse/"> <!-- for using existing address -->
 			{% csrf_token %}
-			{% for address in address_qs %}
+			{% for address in address_qs %}	<!-- looping over address queryset -->
 
 			<label for="address-{{address.id}}">  <!-- This is the id of particular address -->
 				<input id="address-{{address.id}}" type="radio" name="shipping_address" value="{{address.id}}"/>
+				<!-- name of radio button will be same in both type of address so that we can reference it easily -->
 				{{ address.address_line_1 }}
 			</label>
 			<br>
@@ -77,7 +76,7 @@
 
 			{% endif %}
 
-			<input type="hidden" name="address_type" value="shipping_address">
+			<input type="hidden" name="address_type" value="shipping_address">	<!-- address type that will be used in view -->
 
 			<input type="submit" name="submit" value="Use Address" class="btn btn-primary" >
 		</form>
@@ -92,12 +91,12 @@
 		<h1>Billing Address </h1>
 		<br>
 
-		<form  method = "POST" action="/checkout_address/">
+		<form  method = "POST" action="/checkout_address/">	<!-- this form will be submitted to checkout_address view -->
 			{% csrf_token %}
 			{{ addressform.as_p }}
 
 			{% if address_type %}
-			<input type="hidden" name = "address_type" value="billing">
+			<input type="hidden" name = "address_type" value="billing">	<!-- this will be used in view function -->
 			{% endif %}
 
 			<input type="hidden" name="next" value="{{ next_url }}">
@@ -108,7 +107,7 @@
 	</div>
 
 	<div class="col-md-6">
-		{% if address_qs.exists %}
+		{% if address_qs.exists %}	<!-- if address exists then use it -->
 
 		<form method="POST" action="/checkout_address_reuse/">
 			{% csrf_token %}
@@ -116,6 +115,7 @@
 
 			<label for="address-{{address.id}}">  <!-- Very Important -- name should be same in both codes -->
 				<input id="address-{{address.id}}" type="radio" name="shipping_address" value="{{address.id}}"/>
+				<!-- name of radio button is same so that we can reference it easily in view function -->
 				{{ address.address_line_1 }}
 			</label>
 			<br>
@@ -128,7 +128,7 @@
 
 			{% endif %}
 
-			<input type="hidden" name="address_type" value="billing_address">
+			<input type="hidden" name="address_type" value="billing_address">	<!-- this will be used in view function -->
 
 			<input type="submit" name="submit" value="Use Address" class="btn btn-primary" >
 		</form>
@@ -139,25 +139,25 @@
 
 	{% else %}
 
-	{% if not has_card %}
+	{% if not has_card %} 	<!-- if billing profile has no card info -->
 
 	<form method = "GET" action = "/payment_method">
+
 		{% csrf_token %}
 		<input type="hidden" name="next" value="{{next_url}}">
 		<button type="submit" class="btn btn-primary" style="margin-left: 50px;">Add New Card</button>
+
 	</form>
 
 
 	{% else %}
 
-
 	<div class="col-md-6">
-		 
-		 	<div> 
+		 	<div>
 		 		<h4 style="padding: 9px;"> Order Details </h4>
-			 	<div class="payment-details" style="border: 1px solid rgba(0,0,0,.125); 
+			 	<div class="payment-details" style="border: 1px solid rgba(0,0,0,.125);
 			 									border-radius: 9px;
-			 									width: 500px; 
+			 									width: 500px;
 			 									height: 105px;
 			 									padding-top: 20px;">
 
@@ -172,19 +172,20 @@
 									    padding: 4px;
 									    padding-left: 10px;
 									    background-color: #efe;
-									    width: 250px;"> {{billing_profile.default_card}} </p> 
+									    width: 250px;"> {{billing_profile.default_card}} </p>
+
 					<p style="float: right; padding-right: 10px; font-size: 13px;">
 						<a href="/payment_method/?next={{ next_url }}" class="change-link"> Change / Add Card </a>
 					</p>
 
 				</div>
-			</div>	
+			</div>
 
 			<div>
-			 	<div class="payment-details" style="border: 1px solid rgba(0,0,0,.125); 
+			 	<div class="payment-details" style="border: 1px solid rgba(0,0,0,.125);
 			 									border-radius: 9px;
 			 									width: 500px;
-			 									margin-top: 20px; 
+			 									margin-top: 20px;
 			 									height: 350px;
 			 									padding-top: 20px;">
 
@@ -207,14 +208,14 @@
 									    				{{ object.shipping_address.address_line_2 }},
 									    				{{ object.shipping_address.city }} <br>
 									    				{{ object.shipping_address.pincode }}
-									    				{{ object.shipping_address.state }} </p> 
+									    				{{ object.shipping_address.state }} </p>
 					<p style=" margin-left: 20px;
 								margin-bottom: 30px;
 								margin-top: 5px;
 		    					display: inline-block;
 		    					word-spacing: 0.5rem;">
 
-							<b>  Billing Address  </b> </p> &nbsp; 
+							<b>  Billing Address  </b> </p> &nbsp;
 							<p style="display: inline-block;
 										border: 0.5px solid #eee;
 									    border-radius: 5px;
@@ -229,10 +230,10 @@
 									    				{{ object.billing_address.address_line_2 }},
 									    				{{ object.billing_address.city }} <br>
 									    				{{ object.billing_address.pincode }}
-									    				{{ object.billing_address.state }} </p> 
+									    				{{ object.billing_address.state }} </p>
 
 				</div>
-			</div>	
+			</div>
 	</div>
 
 	<div class="col-md-4 order-md-2 mb-4">
@@ -241,7 +242,7 @@
         <span class="badge badge-secondary badge-pill"> {{ request.session.cart_items }}</span>
       </h4>
 
-      
+
       <ul class="list-group mb-3">
 
       	{% for product in cart.products.all %}
@@ -261,17 +262,17 @@
           <strong> &#8377; {{ object.shipping_total }}</strong>
         </li>
 
-        
+
         <li class="list-group-item d-flex justify-content-between">
           <span>Total </span>
           <strong> &#8377; {{ object.total }}</strong>
         </li>
       </ul>
-   
 
-    
 
-    <form method="post" class="form" action=''>
+
+
+    <form method="post" class="form" action=''>  <!-- this form data is used in checkout view -->
 
 			{% csrf_token %}
 

@@ -10,7 +10,7 @@
 <div class="row">
 	<div class="col-md-4 col-xs-12">
 		<div style="margin-left: 8px;">
-			<img src="{{product.image.url}}" width="100%">
+			<img src="{{product.image.url}}" width="100%"> <!-- image is always used with (.url) -->
 		</div>
 	</div>	
 	<div class="col-md-4 col-xs-12">
@@ -46,6 +46,8 @@
 		</form>
 
 	</div>
+
+	<!-- review form -->
 	<div class="col-md-4 col-xs-12" style="padding-right: 20px;">
 		<form method = "POST" >
 			{% csrf_token %}
@@ -63,8 +65,8 @@
 		<h3 style="padding-left: 10px;"> Product Reviews </h3>
 		<div style="border: 1px solid #aaa; padding-right: 8px; margin-left: 5px; ">
 
-			{% for review in reviews %}
-			<blockquote class="blockquote text-right">
+			{% for review in reviews %}  <!-- pagination -->
+			<blockquote class="blockquote text-right">  <!-- blockqote for all reviews -->
 				<p class="mb-0" style="font-size: 18px;"> {{review.description}}.</p>
 				<footer class="blockquote-footer"> <cite title="{{review.reviewed_by}}">{{review.reviewed_by}} </cite>
 				</footer>			
@@ -75,15 +77,15 @@
 
 		<div class="pagination">
 			<span class="step-links">
-				{% if reviews.has_previous %}
+				{% if reviews.has_previous %}  <!-- check for previous page -->
 				<a href="?page= 1"> &lt; &lt;First </a>
 				<a href="?page= {{reviews.previous_page_number}}">Previous</a>
 				{% endif %}
 
-				<span class="current" style="margin-left: 8px;"> 
+				<span class="current" style="margin-left: 8px;">  <!-- show the current page -->
 					Page {{reviews.number}} of {{reviews.paginator.num_pages}}
 
-					{% if reviews.has_next %}
+					{% if reviews.has_next %} <!-- check for next page -->
 					<a href="?page= {{reviews.next_page_number}}"> Next </a>
 					<a href="?page= {{reviews.paginator.num_pages}}">Last</a>
 					{% endif %}

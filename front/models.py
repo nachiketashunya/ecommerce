@@ -15,7 +15,7 @@ class WishlistManager(models.Manager):  #inherits the Manager class
 			obj_created = False 
 			wishlist_obj = qs.first()
 
-			if request.session.get('username') is not None and wishlist_obj.user is None:
+			if request.session.get('username') is not None and wishlist_obj.user is None: #setting the user for wishlist 
 				try:
 					wishlist_obj.user = UserProfile.objects.get( email = request.session.get('username')).id
 				except:
@@ -44,7 +44,7 @@ class WishlistManager(models.Manager):  #inherits the Manager class
 			if request.session.get('username'):
 				user_obj = user 
 
-		return self.model.objects.create( user = user_obj)
+		return self.model.objects.create( user = user_obj)  #used self to create object in class itself 
 
 #model to store wishilist products 
 class Wishlist(models.Model):

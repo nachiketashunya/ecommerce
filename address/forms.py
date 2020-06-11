@@ -1,11 +1,13 @@
-from django import forms 
-from .models import Address 
+from django import forms
+from .models import Address
 
+
+# AddressForm to create address for shipping and billing
 class AddressForm(forms.ModelForm):
 	class Meta:
 		fields = '__all__'
-		model = Address 
-		exclude = [ 'billing_profile', 'address_type']
+		model = Address
+		exclude = [ 'billing_profile', 'address_type']  #these fields won't be included in ModelForm
 
 
 		widgets = {

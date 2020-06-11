@@ -1,3 +1,5 @@
+<!-- Template to show Cart -->
+
 {% extends 'base/base.html' %}
 {% block content %}
 
@@ -14,7 +16,7 @@
 		  <tbody>
 		  	{% for product in cart.products.all %}
 		    <tr>
-		      <th scope="row">{{ forloop.counter }} .</th>
+		      <th scope="row">{{ forloop.counter }} .</th>  <!-- this is used to make a count on items -->
 		      <td><a href="/productdetails/{{product.id}}"><img src="{{product.image.url}}" width="50px" height="50px"></a></td>
 		      <td><a href="/productdetails/{{product.id}}">{{ product.title }}</a></td>
 		      <td> &#8377; {{ product.price }}</td>
@@ -30,7 +32,7 @@
 		    <tr>
 		     	<td colspan="2"></td>
 		     	<td> <b>Total (Subtotal + 10% Tax) : </b></td>
-		    	<td> 
+		    	<td>
 		    		<span> &#8377; {{cart.total}} </span>
 		    	</td>
 		    </tr>
@@ -38,7 +40,7 @@
 		    <tr>
 		    	<td colspan="3">  </td>
 		    	<td>
-		    		<a href="/cart/checkout" class="btn btn-success" style="color: #FFF;">Checkout</a> 
+		    		<a href="/cart/checkout" class="btn btn-success" style="color: #FFF;">Checkout</a>
 		    	</td>
 		    </tr>
 		  </tbody>

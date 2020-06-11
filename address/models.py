@@ -4,6 +4,8 @@ from billing.models import BillingProfile
 # Create your models here.
 ADDRESS_TYPE = (('shipping' ,'Shipping'), ('billing', 'Billing'))
 
+
+# ModelClass to store address for order
 class Address(models.Model):
 	billing_profile = models.ForeignKey(BillingProfile, on_delete = models.CASCADE)
 	address_type = models.CharField(max_length = 20, choices = ADDRESS_TYPE)
