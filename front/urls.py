@@ -18,8 +18,8 @@ urlpatterns = [
 
 	# Class Based Urls 
 
-	path('productpageview/' , ProductPageView.as_view() , name = "productpage"),
-	path('productdetailview/<int:pk>' , ProductDetailView.as_view(), name = "product_detail"),
-	path('productcategoryview/<int:id>' , ProductCategoryView.as_view() , name = "product_category"),
+	# path('productpageview/' , ProductPageView.as_view() , name = "productpage"),
+	# path('productdetailview/<int:pk>' , ProductDetailView.as_view(), name = "product_detail"),
+	# path('productcategoryview/<int:id>' , ProductCategoryView.as_view() , name = "product_category"),
 
 ]
