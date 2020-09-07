@@ -1,0 +1,131 @@
+
+#offer-image {
+    width: 20vw;
+    height: 60vh;
+}
+
+#login-form-container {
+    width: 60vw;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #5d5c614d;
+    border-radius: 7px;
+    box-shadow: 20px 20px 20px #f1f1f1;
+}
+
+#content {
+    flex: 1 1 100%;
+    text-align: center;
+    margin: 0.5rem 1rem;
+}
+
+#login-form,
+#guest-login-form {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    flex: 1 1;
+}
+
+#login-form input,
+#guest-login-form input {
+    margin-bottom: 0.6rem;
+}
+
+#login-form #submit-btn,
+#guest-login-form #submit-btn {
+    border: 1px solid #ccc;
+    background-color: #557a95;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 0.4rem;
+    font-family: "Roboto", "Open Sans", sans-serif;
+}
+
+span#separator {
+    border: 1px solid #3d3d3d;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 0.3rem;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+#registration-btn {
+    border: 1px solid #ccc;
+    width: 80%;
+    margin: 1rem auto 0 auto;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #3d3d3d;
+}
+
+#registration-btn a {
+    text-decoration: none;
+    color: black;
+}
+
+#registration-btn:hover,
+#submit-btn:hover {
+    opacity: 0.5;
+}
+
+
+.message-section {
+    width: 80%;
+    margin: auto;
+    background-color: #28a745;
+    border-radius: 5px;
+}
+
+p.message-text {
+    padding: 0.4rem;
+    color: white;
+    font-family: "Roboto", "Open Sans", sans-serif;
+}
+
+
+/* styling for guest login */
+#login-form-container.guest {
+    min-height: 60vh;
+}
+
+.line-separator {
+    border-bottom: 1px solid #000;
+    width: 70%;
+    margin: 2rem auto;
+}
+
+
+
+@media (max-width: 960px) {
+    #login-form-container {
+        width: 80vw;
+        border: none;
+    }
+
+    #offer-image {
+        display: none;
+    }
+
+    #login-form,
+    #guest-login-form {
+        width: 90%;
+    }
+
+    #registration-btn {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+}
+
+
+
+

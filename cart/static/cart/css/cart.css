@@ -1,0 +1,88 @@
+#cart-container {
+    width: 60vw;
+    margin: 7rem auto;
+    /* font-family: "Roboto", "Open Sans", sans-serif; */
+}
+
+#product-image {
+    width: 50px;
+    height: 50px;
+    margin: 0.1rem 0.8rem;
+}
+
+#cart-items-table thead th {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+#cart-items-table tbody td {
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* font-family: "Roboto", "Open Sans", sans-serif; */
+}
+
+#cart-items-table tbody td.pricing {
+    padding-left: 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+
+span.tax-info {
+    font-weight: 100;
+    font-size: 0.9rem;
+}
+
+#checkout-button {
+    float: right;
+    margin: 0.2rem 0.5rem;
+    width: 30%;
+}
+
+#checkout-button a {
+    color: white;
+    text-decoration: none;
+}
+
+#checkout-button a:hover {
+    text-decoration: none;
+}
+
+@media (max-width: 960px) {
+    #cart-container {
+        width: 90vw;
+    }
+
+    #product-image {
+        width: 40px;
+        height: 40px;
+        margin: 0.1rem 0.5rem;
+    }
+    
+    #cart-items-table thead th {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    #cart-items-table tbody td {
+        font-size: 0.8rem;
+        font-weight: 600;
+        /* font-family: "Roboto", "Open Sans", sans-serif; */
+    }
+    
+    #cart-items-table tbody td.pricing {
+        padding-left: 3rem;
+        font-size: 1rem;
+        font-weight: 600;
+        /* font-family: Arial, Helvetica, sans-serif; */
+    }
+    
+    
+    span.tax-info {
+        font-weight: 100;
+        font-size: 0.7rem;
+    }
+
+
+}

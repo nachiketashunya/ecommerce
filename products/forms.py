@@ -8,7 +8,7 @@ class ReviewForm(forms.Form):
 																			'readonly' : 'readonly', 
 																			'required' : 'required', 
 																			'placeholder' : 'Enter Email'
-																		}))
+																		}), label="")
 
 
 	product_id = forms.CharField(widget = forms.TextInput(attrs = {		
@@ -22,4 +22,4 @@ class ReviewForm(forms.Form):
 	description = forms.CharField(widget = forms.Textarea( attrs = {	
 																		'class' : 'form-control', 	
 																		'placeholder' : 'Write review'
-																	}))
+																	}), label="")

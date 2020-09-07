@@ -2,32 +2,85 @@
 {% block content %}
 {% load static %}
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <a href="/productpage">
-        <img src="{% static 'image/shopclues.jpg' %}" class="d-block w-100" alt="...">
-      </a>
-    </div>
-    <div class="carousel-item">
-      <a href="/productpage">
-        <img src="{% static 'image/shopclues1.jpg' %}" class="d-block w-100" alt="...">
-      </a>
-    </div>
-    <div class="carousel-item">
-      <a href="/productpage">
-        <img src="{% static 'image/shopclues2.jpg' %}" class="d-block w-100" alt="...">
-      </a>
-    </div>
+<div id="home-container">
+  <div id="slide-section">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+          <div class="carousel-item active">
+              <a href="/productpage">
+              <img src="{% static 'image/slider1.jpg' %}" class="d-block w-100" alt="...">
+              </a>
+          </div>
+          <div class="carousel-item">
+              <a href="/productpage">
+              <img src="{% static 'image/slider2.jpg' %}" class="d-block w-100" alt="...">
+              </a>
+          </div>
+          <div class="carousel-item">
+              <a href="/productpage">
+              <img src="{% static 'image/slider3.jpg' %}" class="d-block w-100" alt="...">
+              </a>
+          </div>
+          <div class="carousel-item">
+            <a href="/productpage">
+            <img src="{% static 'image/slider4.jpg' %}" class="d-block w-100" alt="...">
+            </a>
+        </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+          </a>
+      </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+
+  <div id="brands-section">
+      <div class="brand-image">
+        <a href="/productpage">
+          <img src="{% static 'image/picture1.webp' %}" alt="">
+        </a>
+      </div>
+      <div class="brand-image">
+        <a href="/productpage">
+          <img src="{% static 'image/picture2.webp' %}" alt="">
+        </a>
+      </div>
+      <div class="brand-image">
+        <a href="/productpage">
+          <img src="{% static 'image/picture3.webp' %}" alt="">
+        </a>
+      </div>
+      <div class="brand-image">
+        <a href="/productpage">
+          <img src="{% static 'image/picture4.webp' %}" alt="">
+        </a>
+      </div>
+  </div>
+
+  <div id="offer-section">
+      <div class="offer-image">
+        <a href="/productpage">
+          <img src="{% static 'image/rowpicture1.jpg' %}" alt="">
+        </a>
+      </div>
+      <div class="offer-image">
+        <a href="/productpage">
+          <img src="{% static 'image/rowpicture2.jpg' %}" alt="">
+        </a>
+      </div>
+  </div>
+
+  <div id="deal-section">
+      <div class="deal-image">
+        <a href="/productpage">
+          <img src="{% static 'image/slider5.jpg' %}" alt="">
+        </a>
+      </div>
+  </div>
 </div>
 
 {% endblock %}

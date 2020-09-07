@@ -3,288 +3,227 @@
 
 {% if not billing_profile %}  <!-- if billing profile is not set then LoginForm and GuestForm will be shown -->
 
-<div class="row">
-	<div class="col-md-6">
-		<h1> Login </h1>
-		<form method="POST" action="/login/">
-			{% csrf_token %}
-			{{loginform.as_p}}
+<div id="login-form-container" class="guest">        
+	<div id="content">
+		<div id="login-form-content">
+			<form id="login-form" method="POST" action="/login/">
+				{% csrf_token %}
+				{{ loginform }}
 
-			<input type="hidden" value="{{next_url}}" name="next">  <!-- Sending next_url to view function, this will redirect to checkout page-->
-			<input type="submit" value="Login" class="btn btn-success" style="float: right;">
-		</form>
-	</div>
+				<input type="hidden" value="{{next_url}}" name="next">
 
-	<div class="col-md-6">
-		<h1> Guest Login </h1>
+				<input type="submit" value="Login" id="submit-btn" class="btn btn-block">
+			</form>
+		</div>
 
-		<form method="POST" action="/guest_register/">
-			{% csrf_token %}
-			{{guestform.as_p}}
+		<div class="line-separator"></div>
 
-			<input type="hidden" value="{{next_url}}" name="next"> <!-- this will redirect to checkout page -->
+		<div id="guest-login-form-content">
+			<!-- <p id="guest-text">You can login as Guest</p> -->
+			<form id="guest-login-form" method="POST" action="/guest_register/">
+				{% csrf_token %}
+				{{ guestform }}
 
-			<input type="submit" value="Login" class="btn btn-success" style="float: right;">
-
-		</form>
+				<input type="hidden" value="{{next_url}}" name="next">
+				<input type="submit" value="Guest Login" id="submit-btn" class="btn btn-block">
+			</form>
+		</div>
 	</div>
 </div>
 
+
 {% else %}
 
-<div class="row">
 	{% if not object.shipping_address %} <!-- if shipping address is none then -->
+	<div id="address-form-container">
+        <div id="address-form-section">
+            <div id="heading">
+                <h3 class="heading-text">Shipping Address</h3>
+            </div>
+			<form id="address-form" method="POST" action="/checkout_address/">
+				{% csrf_token %}
+				{{ addressform }}
+				
+				{% if address_type %}
+				<input type="hidden" name="address_type" value="{{ address_type }}"> 
+				{% endif %}
 
-	<div class="col-md-6">
-		<h1>Shipping Address </h1>
-		<br>
+				<input type="hidden" name="next" value="{{ next_url }}">
+                <input type="submit" value="Submit" class="btn btn-success" id="submit-btn" style="float: right;">
+            </form>
+        </div>
 
-		<form  method = "POST" action="/checkout_address/">	<!-- this form is submitted to checkout_address view function -->
-			{% csrf_token %}
-			{{ addressform.as_p }}
+		{% if address_qs.exists %}
+        <div id="address-reuse-section">
+			<form id="address-reuse-form" method="POST" action="/checkout_address_reuse/">
+				{% csrf_token %}
+				{% for address in address_qs %}
 
-			{% if address_type %}
-			<input type="hidden" name = "address_type" value="{{ address_type }}"> <!-- This address_type we get from cart.views -->
-
-			{% endif %}
-
-			<input type="hidden" name="next" value="{{ next_url }}">
-			<input type="submit" value="Submit" class="btn btn-success" style="float: right;">
-		</form>
-
-	</div>
-
-	<div class="col-md-6"> <!-- we want to show this functionality along with address form that's why we use this inside col-md-6 -->
-		{% if address_qs.exists %}  <!-- address query in cart.views -->
-
-		<form method="POST" action="/checkout_address_reuse/"> <!-- for using existing address -->
-			{% csrf_token %}
-			{% for address in address_qs %}	<!-- looping over address queryset -->
-
-			<label for="address-{{address.id}}">  <!-- This is the id of particular address -->
-				<input id="address-{{address.id}}" type="radio" name="shipping_address" value="{{address.id}}"/>
-				<!-- name of radio button will be same in both type of address so that we can reference it easily -->
-				{{ address.address_line_1 }}
-			</label>
-			<br>
-
-			{% endfor %}
-
-			{% if next_url %}
-
-			<input type="hidden" name="next" value="{{ next_url }}">
-
-			{% endif %}
-
-			<input type="hidden" name="address_type" value="shipping_address">	<!-- address type that will be used in view -->
-
-			<input type="submit" name="submit" value="Use Address" class="btn btn-primary" >
-		</form>
+				<label for="address-{{address.id}}">  
+					<input id="address-{{address.id}}" type="radio" name="shipping_address" value="{{address.id}}"/>
+					<span id="radio-btn-text">
+						{{ address.address_line_1 }}, {{ address.address_line_2 }}, {{ address.city }}, 
+						{{address.state }} {{ address.pincode }}
+					</span>
+				</label>
+	
+				{% endfor %}
+	
+				{% if next_url %}
+				<input type="hidden" name="next" value="{{ next_url }}">
+				{% endif %}
+	
+				<input type="hidden" name="address_type" value="shipping_address">
+				<br>
+                <input type="submit" class="btn btn-success btn-block" id="submit-btn" value="Use this address">
+            </form>
+		</div>
 		{% endif %}
-
 	</div>
+	
+	{% elif not object.billing_address %}
 
+	<div id="address-form-container">
+        <div id="address-form-section">
+            <div id="heading">
+                <h3 class="heading-text">Billing Address</h3>
+            </div>
+			<form id="address-form" method="POST" action="/checkout_address/">
+				{% csrf_token %}
+				{{ addressform }}
+				
+				{% if address_type %}
+				<input type="hidden" name="address_type" value="billing"> 
+				{% endif %}
 
-	{% elif not object.billing_address %}  <!-- Repeating same process for billing_address -->
+				<input type="hidden" name="next" value="{{ next_url }}">
+                <input type="submit" value="Submit" class="btn btn-success" id="submit-btn" style="float: right;">
+            </form>
+        </div>
 
-	<div class="col-md-6">
-		<h1>Billing Address </h1>
-		<br>
+		{% if address_qs.exists %}
+        <div id="address-reuse-section">
+			<form id="address-reuse-form" method="POST" action="/checkout_address_reuse/">
+				{% csrf_token %}
+				{% for address in address_qs %}
 
-		<form  method = "POST" action="/checkout_address/">	<!-- this form will be submitted to checkout_address view -->
-			{% csrf_token %}
-			{{ addressform.as_p }}
-
-			{% if address_type %}
-			<input type="hidden" name = "address_type" value="billing">	<!-- this will be used in view function -->
-			{% endif %}
-
-			<input type="hidden" name="next" value="{{ next_url }}">
-			<input type="submit" value="Submit" class="btn btn-success" style="float: right;">
-
-		</form>
-
-	</div>
-
-	<div class="col-md-6">
-		{% if address_qs.exists %}	<!-- if address exists then use it -->
-
-		<form method="POST" action="/checkout_address_reuse/">
-			{% csrf_token %}
-			{% for address in address_qs %}
-
-			<label for="address-{{address.id}}">  <!-- Very Important -- name should be same in both codes -->
-				<input id="address-{{address.id}}" type="radio" name="shipping_address" value="{{address.id}}"/>
-				<!-- name of radio button is same so that we can reference it easily in view function -->
-				{{ address.address_line_1 }}
-			</label>
-			<br>
-
-			{% endfor %}
-
-			{% if next_url %}
-
-			<input type="hidden" name="next" value="{{ next_url }}">
-
-			{% endif %}
-
-			<input type="hidden" name="address_type" value="billing_address">	<!-- this will be used in view function -->
-
-			<input type="submit" name="submit" value="Use Address" class="btn btn-primary" >
-		</form>
+				<label for="address-{{address.id}}">  
+					<input id="address-{{address.id}}" type="radio" name="shipping_address" value="{{address.id}}"/> 
+					<span id="radio-btn-text">
+						{{ address.address_line_1 }}, {{ address.address_line_2 }}, {{ address.city }}, 
+						{{address.state }} {{ address.pincode }}
+					</span>
+				</label>
+	
+				{% endfor %}
+	
+				{% if next_url %}
+				<input type="hidden" name="next" value="{{ next_url }}">
+				{% endif %}
+	
+				<input type="hidden" name="address_type" value="billing_address"> 
+				<br>
+                <input type="submit" class="btn btn-success btn-block" id="submit-btn" value="Use this address">
+            </form>
+		</div>
 		{% endif %}
-
 	</div>
-
 
 	{% else %}
 
 	{% if not has_card %} 	<!-- if billing profile has no card info -->
 
-	<form method = "GET" action = "/payment_method">
+	<div class="new-card-section">
+        <p>You have no saved cards!</p>
+        <form id="add-new-card" method="GET" action="/payment_method">
+			{% csrf_token %}
 
-		{% csrf_token %}
-		<input type="hidden" name="next" value="{{next_url}}">
-		<button type="submit" class="btn btn-primary" style="margin-left: 50px;">Add New Card</button>
-
-	</form>
-
+			<input type="hidden" name="next" value="{{next_url}}">
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-block">Add new card</button>
+        </form>
+    </div>
 
 	{% else %}
 
-	<div class="col-md-6">
-		 	<div>
-		 		<h4 style="padding: 9px;"> Order Details </h4>
-			 	<div class="payment-details" style="border: 1px solid rgba(0,0,0,.125);
-			 									border-radius: 9px;
-			 									width: 500px;
-			 									height: 105px;
-			 									padding-top: 20px;">
+	<div id="order-details-container">
+        <div id="heading">
+            <h4 class="heading-text">Order Details</h4>
+        </div>
+        <div id="order-details">
+            <div id="content-1">
+                <div class="payment-details">
+                    <p>Payment Method</p>
+                    <div class="details-text">
+                        {{billing_profile.default_card}}
+                    </div>
+                </div>
+                <div class="address-details">
+                    <div class="shipping-address">
+                        <p>Shipping address</p>
+                        <div class="details-text">
+                            {{ billing_profile.user }} <br>
+							{{ object.shipping_address.address_line_1 }} ,
+							{{ object.shipping_address.address_line_2 }},
+							{{ object.shipping_address.city }} <br>
+							{{ object.shipping_address.pincode }}
+							{{ object.shipping_address.state }}
+                        </div>
+                    </div>
+                    <div class="billing-address">
+                        <p>Billing address</p>
+                        <div class="details-text">
+							{{ billing_profile.user }} <br>
+							{{ object.billing_address.address_line_1 }} ,
+							{{ object.billing_address.address_line_2 }},
+							{{ object.billing_address.city }} <br>
+							{{ object.billing_address.pincode }}
+							{{ object.billing_address.state }}
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-					<p style=" margin-left: 20px;
-		    					display: inline-block;">
+            <div id="content-2">
+                <div class="col-md-10 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                      <span class="text-muted">Your cart</span>
+                      <span class="badge badge-secondary badge-pill">{{ request.session.cart_items }}</span>
+                    </h4>
 
-							<b> Payment Method</b> </p> &nbsp; &nbsp;
-							<p style="display: inline-block;
-										border: 0.5px solid #eee;
-									    border-radius: 5px;
-									    font-size: 15px;
-									    padding: 4px;
-									    padding-left: 10px;
-									    background-color: #efe;
-									    width: 250px;"> {{billing_profile.default_card}} </p>
+                    <ul class="list-group mb-3">
+						{% for product in cart.products.all %}
 
-					<p style="float: right; padding-right: 10px; font-size: 13px;">
-						<a href="/payment_method/?next={{ next_url }}" class="change-link"> Change / Add Card </a>
-					</p>
+						<li class="list-group-item d-flex justify-content-between lh-condensed">
+						  <div>
+							<h6 class="my-0">{{ product.title }}</h6>
+							<small class="text-muted">{{ product.description|truncatewords:10 }}</small>
+						  </div>
+						  <span class="text-muted"> &#8377; {{ product.price }}</span>
+						</li>
+				
+						{% endfor %}
+				
+						<li class="list-group-item d-flex justify-content-between">
+						  <span> Shipping Charges  </span>
+						  <strong> &#8377; {{ object.shipping_total }}</strong>
+						</li>
+						<li class="list-group-item d-flex justify-content-between">
+						  <span>Total </span>
+						  <strong> &#8377; {{ object.total }}</strong>
+						</li>
+                    </ul>
 
-				</div>
-			</div>
-
-			<div>
-			 	<div class="payment-details" style="border: 1px solid rgba(0,0,0,.125);
-			 									border-radius: 9px;
-			 									width: 500px;
-			 									margin-top: 20px;
-			 									height: 350px;
-			 									padding-top: 20px;">
-
-					<p style=" margin-left: 20px;
-								margin-bottom: 30px;
-								margin-top: 5px;
-		    					display: inline-block;">
-
-							<b>  Shipping Address </b> </p> &nbsp; &nbsp;
-							<p style="display: inline-block;
-										border: 0.5px solid #eee;
-									    border-radius: 5px;
-									    font-size: 15px;
-									    padding: 4px;
-									    padding-left: 10px;
-									    margin-top: 25px;
-									    background-color: #efe;
-									    width: 250px;"> {{ billing_profile.user }} <br>
-									    				{{ object.shipping_address.address_line_1 }} ,
-									    				{{ object.shipping_address.address_line_2 }},
-									    				{{ object.shipping_address.city }} <br>
-									    				{{ object.shipping_address.pincode }}
-									    				{{ object.shipping_address.state }} </p>
-					<p style=" margin-left: 20px;
-								margin-bottom: 30px;
-								margin-top: 5px;
-		    					display: inline-block;
-		    					word-spacing: 0.5rem;">
-
-							<b>  Billing Address  </b> </p> &nbsp;
-							<p style="display: inline-block;
-										border: 0.5px solid #eee;
-									    border-radius: 5px;
-									    font-size: 15px;
-									    padding: 4px;
-									    margin-left: 23px;
-									    padding-left: 10px;
-									    margin-top: 25px;
-									    background-color: #efe;
-									    width: 250px;"> {{ billing_profile.user }} <br>
-									    				{{ object.billing_address.address_line_1 }} ,
-									    				{{ object.billing_address.address_line_2 }},
-									    				{{ object.billing_address.city }} <br>
-									    				{{ object.billing_address.pincode }}
-									    				{{ object.billing_address.state }} </p>
-
-				</div>
-			</div>
-	</div>
-
-	<div class="col-md-4 order-md-2 mb-4">
-      <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span class="text-muted">Your cart</span>
-        <span class="badge badge-secondary badge-pill"> {{ request.session.cart_items }}</span>
-      </h4>
-
-
-      <ul class="list-group mb-3">
-
-      	{% for product in cart.products.all %}
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0"> {{ product.title }} </h6>
-            <small class="text-muted">{{ product.description }}</small>
-          </div>
-          <span class="text-muted"> &#8377; {{ product.price }}</span>
-        </li>
-
-        {% endfor %}
-
-        <li class="list-group-item d-flex justify-content-between">
-
-          <span> Shipping Charges  </span>
-          <strong> &#8377; {{ object.shipping_total }}</strong>
-        </li>
-
-
-        <li class="list-group-item d-flex justify-content-between">
-          <span>Total </span>
-          <strong> &#8377; {{ object.total }}</strong>
-        </li>
-      </ul>
-
-
-
-
-    <form method="post" class="form" action=''>  <!-- this form data is used in checkout view -->
-
-			{% csrf_token %}
-
-			<div class="confirm-order">
-
-			<button type="submit" class="btn btn-primary" style="margin: 0px auto 0px auto; width: 100%;">Confirm Checkout</button>
-
-			</div>
-	</form>
-	</div>
-
-
+                    <div class="confirm-order">
+                        <form method="POST">
+							{% csrf_token %}
+							
+                            <button type="submit" class="btn btn-block btn-success">Confirm Checkout</button>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+    
 	{% endif %}
 
 </div>

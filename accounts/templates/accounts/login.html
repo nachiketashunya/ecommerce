@@ -1,35 +1,30 @@
 {% extends 'base/base.html' %}
 {% block content %}
+{% load static %}
 
-<div class = "row">
-
-    <div class = "col-md-4 login-box">
-        <div style = "box-shadow : 7px 7px 7px 7px #aaa; padding : 50px;">
-        	{% if messages %}
-	            <div class="messages-container">
-	            	{% for message in messages %}
-	            	<div class="success-message"> {{ message }} </div>  <!-- this will show the message -->
-	            	{% endfor %}
-	            </div>
-	        {% endif %}
-	        
-            <form method = "POST">
-                {% csrf_token %}
-                {{ form.as_p }}
-
-                <input type = "submit" value = "Log In" class="btn-block btn-success" id = "login-button"/>
-
-            </form>
-
-
-            <div class="or-separator"> OR </div>
-
-            <div class="registration-link">
-                <p class="registration-link" >
-                    <a href="/registration" class="registration-link"> Create an account </a>
-                </p>
-            </div>
+<div id="login-form-container">
+    <img src="{% static 'accounts/image/offer.jpg' %}" alt="" id="offer-image">
+    
+    <div id="content">
+        {% if messages %}
+        <div class="message-section">
+            {% for message in messages %}
+            <p class="message-text">You are successfully registered!</p>
+            {% endfor %}
         </div>
+        {% endif %}
+        <div id="login-form-content">
+            <form id="login-form" method="POST">
+                {% csrf_token %} 
+                {{ form }}
+
+                <input type="submit" value="Login" id="submit-btn" class="btn btn-block">
+            </form>
+        </div>
+
+        <span id="separator">OR</span>
+
+        <button id="registration-btn" class="btn btn-block"><a href="/registration" class="registration-link" >Register Now</a></button>
     </div>
 </div>
 

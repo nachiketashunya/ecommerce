@@ -34,27 +34,34 @@
   background-color: #fefde5 !important;
 }
 
+#add-card-form {
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px #ccc;
+  padding: 1.3rem 2rem;
+}
+
 </style>
 
 
-<div class='col-10 col-md-6 mx-auto'>
-<form  class="payment-form" action="/payment_method_create/" method= "post" id="payment-form" data-next-url ="{% if next_url %}{{ next_url }}{% endif %}" data-token="{{ publish_key }}">
+<div class='col-10 col-md-6 mx-auto mt-5' id="add-card-form">
+  <form  class="payment-form" action="/payment_method_create/" method= "post" id="payment-form" data-next-url ="{% if next_url %}{{ next_url }}{% endif %}" data-token="{{ publish_key }}">
 
-  {% csrf_token %}
-  <div class="form-row">
-    <label for="card-element">
-      Credit or debit card
-    </label>
-    <div id="card-element" class="StripeElement StripeElement--empty form-control">
-      <!-- A Stripe Element will be inserted here. -->
+    {% csrf_token %}
+
+    <div class="form-row">
+      <label for="card-element">
+        Credit or debit card
+      </label>
+      <div id="card-element" class="StripeElement StripeElement--empty form-control">
+        <!-- A Stripe Element will be inserted here. -->
+      </div>
+
+      <!-- Used to display form errors. -->
+      <div id="card-errors" role="alert"></div>
     </div>
-
-    <!-- Used to display form errors. -->
-    <div id="card-errors" role="alert"></div>
-  </div>
-<br>
-  <input type="submit" name="payment" class="btn btn-success" value="Submit">
-</form>
+    <br>
+    <input type="submit" name="payment" class="btn btn-success btn-sm" value="Submit">
+  </form>
 </div>
 
 <script>

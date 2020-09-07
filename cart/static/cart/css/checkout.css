@@ -1,0 +1,80 @@
+#address-form-container {
+    margin: 1.5rem 5rem;
+    padding: 0.5rem;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#address-form-container #heading {
+    background-color: #7395ae;
+    padding: 0.3rem 0.1rem;
+}
+
+#address-form-container #heading .heading-text {
+    color: white;
+    padding: 0.2rem 0.6rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+#address-form-section {
+    padding: 0.2rem;
+    width: 60%;
+}
+
+#address-form-section #address-form {
+    padding: 0.5rem 0.9rem;
+}
+
+#address-form-section #address-form input[type="text"] {
+    margin-bottom: 0.8rem;
+}
+
+
+#address-reuse-section {
+    margin: 1rem 5rem;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    padding: 0.5rem 2rem;
+    width: 40%;
+
+}
+
+#address-reuse-form {
+    text-align: center;
+}
+
+#radio-btn-text {
+    padding: 0rem 0.3rem;
+    font-size: 1.1rem;
+}
+
+#address-reuse-form #submit-btn {
+    margin: 2rem 0.3rem 1rem 0.3rem;
+}
+
+
+@media (max-width: 960px) {
+    #address-form-container {
+        display: block;
+        margin: 1rem 0.5rem;
+    }
+
+    #address-form-section {
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+
+    #address-form-section #heading .heading-text {
+        font-size: 1.2rem;
+        padding: 0.3rem 0.2rem;
+    }
+
+    
+    #address-reuse-section {
+        margin: 1rem 1rem;
+        padding: 0.5rem 2rem;
+    }
+}

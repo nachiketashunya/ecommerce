@@ -21,22 +21,23 @@ from .forms import UserProfileForm, LoginForm, GuestForm , UpdatePasswordForm
 
 
 def register_user(request):
-	userprofileform = UserProfileForm(request.POST or None, label_suffix = " :") # label_suffix customizes label
+	userprofileform = UserProfileForm(request.POST or None, label_suffix = " :") #label_suffix customizes label
 
-	if request.method == "POST":   # this checks the request methods
-		userprofileform = UserProfileForm(request.POST , request.FILES)  # request.FILES --- for file upload
+	if request.method == "POST": 
+		userprofileform = UserProfileForm(request.POST)  
+		#request.FILES --- for file upload
 
-		if userprofileform.is_valid():  # Returns a Boolean Value
+		if userprofileform.is_valid(): 
 			try:
 				userprofileform.save()
-				messages.success(request, "You are successfully registered")
+				messages.success(request, "You are successfully registered. Login now")
 
 				return redirect("/login")
 
 			except:
 				return redirect('../registration')
 
-	context = { 'forms' : userprofileform }  # key will be used in template
+	context = { 'forms' : userprofileform }  #key will be used in template
 
 
 	return render( request, 'accounts/register_user.html', context)
@@ -44,7 +45,7 @@ def register_user(request):
 
 def login(request):
 	loginform = LoginForm( request.POST or None  , label_suffix = "" , auto_id = 'id_for_%s')  #inititalising form
-	next_ = request.GET.get('next') # getting next_url
+	next_ = request.GET.get('next') #getting next_url
 	next_post = request.POST.get('next')
 	redirect_path = next_ or next_post or None
 
@@ -130,8 +131,8 @@ def update_password(request):
 				try:
 					if current_password == user.password:
 						if new_password == confirm_new_password:
-							UserProfile.objects.filter(email =  request.session['username']).update(password = new_password ,
-																						confirm_password = confirm_new_password)  #using update function to update details
+							UserProfile.objects.filter(email =  request.session['username']).update(password = new_password , confirm_password = confirm_new_password)  
+							#using update function to update details
 
 							return redirect('/profile')
 						else:

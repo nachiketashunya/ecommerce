@@ -1,6 +1,90 @@
 {% extends 'base/base.html' %}
 {% block content %}
 
+<div id="product-details-container">
+	<div id="heading">
+		<h3 class="heading-text">Product Details</h3>
+	</div>
+
+	<div id="product-details">
+		<div id="product-image-section">
+			<img src="{{product.image.url}}" alt="" id="product-image">
+		</div>
+		<div id="product-info">
+			<h2 class="product-title">{{product.title}} </h2>
+			<pre class="product-description" style="font-family: 'Robot', 'Open Sans', sans-serif; font-size: 1rem; white-space: pre-line;">{{product.description}}</pre>
+
+			<p class="product-price"> &#8377; {{product.price}} </p>
+
+			<div class="buttons">
+				<form method="POST" action="/cart/cartupdate/">
+					{% csrf_token %}
+		
+					<input type="hidden" name="product_id" value="{{product.id}}">
+		
+						{% if product in cart.products.all %}
+		
+						<div class="btn-group">
+							<button class="btn btn-primary"><a href="/cart" style="color: white !important;">In Cart</a></button>
+
+							<span style="margin: 0rem 0.8rem;"></span>
+		
+							<button type="submit" class="btn btn-danger">Remove ?</button>
+						</div>
+		
+						{% else %}
+						<button class="btn btn-success">Add To Cart </button>
+						{% endif %}
+					</span>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="reviews-section">
+		<div id="review-form-section">
+			<form method="POST" id="review-form">
+				{% csrf_token %}
+				{{ form }}
+	
+				<input type="submit" value="Review" class="btn btn-success">
+			</form>
+		</div>
+
+		<div id="reviews-content">
+			<div id="review-heading">
+				<h5 class="review-heading-text">Product Reviews</h5>
+			</div>
+			<div class="review">
+				{% for review in reviews %} 
+				<blockquote class="blockquote text-right">
+					<p class="blockquote-text mb-0">{{review.description}}.</p>
+					<footer class="blockquote-footer"><cite title="{{review.reviewed_by}}">{{review.reviewed_by}} </cite></footer>
+				</blockquote>
+				{% endfor %}
+			</div>
+			<div class="pagination">
+				<span class="step-links">
+					{% if reviews.has_previous %} 
+					<a href="?page= 1"> &lt; &lt;First </a>
+					<a href="?page= {{reviews.previous_page_number}}">Previous</a>
+					{% endif %}
+	
+					<span class="current" style="margin-left: 8px;"> 
+						Page {{reviews.number}} of {{reviews.paginator.num_pages}}
+	
+						{% if reviews.has_next %} 
+						<a href="?page= {{reviews.next_page_number}}"> Next </a>
+						<a href="?page= {{reviews.paginator.num_pages}}">Last</a>
+						{% endif %}
+					</span>
+				</span>		
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 
 <div class="row">
 	<div class="col-md-12">
 		<h1 style="margin-left: 7px;">Product Details </h1>
@@ -10,7 +94,7 @@
 <div class="row">
 	<div class="col-md-4 col-xs-12">
 		<div style="margin-left: 8px;">
-			<img src="{{product.image.url}}" width="100%"> <!-- image is always used with (.url) -->
+			<img src="{{product.image.url}}" width="100%"> 
 		</div>
 	</div>	
 	<div class="col-md-4 col-xs-12">
@@ -32,7 +116,7 @@
 				<div class="btn-group">
 					<a href = "/cart" class="btn btn-primary checkout-button" style="margin-right: 20px;">In Cart</a>
 
-					<button type="submit" class="btn btn-danger">Remove?</button>
+					<button type="submit" class="btn btn-danger">Remove ?</button>
 				</div>
 
 				{% else %}
@@ -47,7 +131,7 @@
 
 	</div>
 
-	<!-- review form -->
+	
 	<div class="col-md-4 col-xs-12" style="padding-right: 20px;">
 		<form method = "POST" >
 			{% csrf_token %}
@@ -65,8 +149,8 @@
 		<h3 style="padding-left: 10px;"> Product Reviews </h3>
 		<div style="border: 1px solid #aaa; padding-right: 8px; margin-left: 5px; ">
 
-			{% for review in reviews %}  <!-- pagination -->
-			<blockquote class="blockquote text-right">  <!-- blockqote for all reviews -->
+			{% for review in reviews %}  
+			<blockquote class="blockquote text-right">  
 				<p class="mb-0" style="font-size: 18px;"> {{review.description}}.</p>
 				<footer class="blockquote-footer"> <cite title="{{review.reviewed_by}}">{{review.reviewed_by}} </cite>
 				</footer>			
@@ -77,15 +161,15 @@
 
 		<div class="pagination">
 			<span class="step-links">
-				{% if reviews.has_previous %}  <!-- check for previous page -->
+				{% if reviews.has_previous %} 
 				<a href="?page= 1"> &lt; &lt;First </a>
 				<a href="?page= {{reviews.previous_page_number}}">Previous</a>
 				{% endif %}
 
-				<span class="current" style="margin-left: 8px;">  <!-- show the current page -->
+				<span class="current" style="margin-left: 8px;"> 
 					Page {{reviews.number}} of {{reviews.paginator.num_pages}}
 
-					{% if reviews.has_next %} <!-- check for next page -->
+					{% if reviews.has_next %} 
 					<a href="?page= {{reviews.next_page_number}}"> Next </a>
 					<a href="?page= {{reviews.paginator.num_pages}}">Last</a>
 					{% endif %}
@@ -93,6 +177,6 @@
 			</span>		
         </div>
 	</div>
-</div>
+</div> -->
 
 {% endblock %}

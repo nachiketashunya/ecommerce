@@ -1,66 +1,103 @@
-<nav class="navbar navbar-expand-lg navbar-custom" >
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+{% load static %}
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div id = "header" style="margin-right: 20px;">
-        <h1 class="header"><a href = "/" class="header-link">Ecommerce</a></h1>
-    </div>
-    <form class="form-inline my-2 my-lg-0" action="/search">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name = "search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-
-    <ul class="navbar-nav mr-auto" style="margin-left: 45%;">
-      {% if 'username' not in request.session %}
-
-      <li class="nav-item profile-dropdown" style="color : #fff;">
-        <div class="profile-dropdown">
-        
-          <div class="profile-dropbtn"> <i class="far fa-user fa-lg"> </i></div>
-          <div class="profile-dropdown-content">
-
-              <a href = "/login" id="profile-dropdown-item"> Login </a>
-              <a href="/registration" id="profile-dropdown-item"> Register </a>
-          </div>
-        </div>
-          
-      </li>
-
-      {% endif %}
-
-    
-      {% if 'username' in request.session %}
-
-      <li class="nav-item profile-dropdown" style="color : #fff;">
-        <div class="profile-dropdown">
-        
-          <div class="profile-dropbtn"> <i class="far fa-user fa-lg"> </i></div>
-          <div class="profile-dropdown-content">
-              <a href = "/profile" id="dropdown-item" style="font-size: 16px;"> {{ user_data.name }}   </a>
-              <div class="dropdown-divider"></div>
-              <a href="/wishlist" id="dropdown-item"> My Wishlist</a>
-              <a href="/cart" id="dropdown-item"> My Cart </a>
-              <div class="dropdown-divider"></div>
-              <a href="/updatepassword" id="dropdown-item"> Update Password </a>
-              <a href="/logout" id="dropdown-item"> Log out  </a>
-          </div>
-        </div>
-          
-      </li>
-
-      {% endif %}
-      <li class="nav-item" style="margin-left: 10px;">
-        <a class="nav-link" href="/cart">
-          <span style="margin-top: -10px; font-size: 8px;" class="badge badge-danger"> {{ request.session.cart_items }}</span>
-          <i class="fa fa-shopping-cart fa-lg"> </i>
-
-        </a>
-      </li>
-
-
-    </ul>
-   
+<nav id="main-navbar">
+  <div class="logo">
+      <a href="/"><img src="{% static 'image/logo.png' %}" alt="Website logo" id="website-logo"></a>
   </div>
+
+  <div id="search-form">
+      <form class="form-inline" action="/search">
+          <input class="form-control" type="search" placeholder="search items" aria-label="Search" name = "search">
+          <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-search" id="search-icon"></i></button>
+        </form>
+  </div>
+
+  <div id="nav-item-list">
+      <ul class="nav-items">
+        <li class="nav-item">
+            <a href="/productpage">Products</a>
+        </li>
+          <li class="nav-item">
+              <a href="/productpage">Men</a>
+          </li>
+          <li class="nav-item">
+              <a href="/productpage">Women</a>
+          </li>
+          <li class="nav-item">
+              <a href="/productpage">Kids</a>
+          </li>
+          <li class="nav-item">
+              <a href="#">Offers</a>
+          </li>
+      </ul>
+  </div>
+
+<div id="icons">
+    <div class="icon user-icon">
+        <i class="fas fa-user"></i>
+    </div>
+    <div class="icon shopping-cart-icon">
+        <a class="nav-link" href="/cart">
+            <span style="margin-top: -10px; font-size: 8px;" class="badge badge-danger"> {{ request.session.cart_items }}</span>
+            <i class="fas fa-shopping-cart"> </i>
+        </a>
+    </div>
+
+    <div class="icon hamberger-icon">
+        <i class="fas fa-bars"></i>
+    </div>
+</div>
+
+  <div class="user-section">
+      <div class="content">
+          {% if 'username' in request.session %}
+          <div class="user-info">
+              <p><a href="#">{{ user_data.name }}</a></p>
+              <p><a href="#">My Wishlist</a></p>
+              <p><a href="/cart">My Cart</a></p>
+              <p><a href="/updatepassword">Update Password</a></p>
+              <p><a href="/logout">Log Out</a></p>
+          </div>
+          
+          {% else %}
+          <div class="guest-content">
+              <p class="welcome-text">
+                  <span class="text">WELCOME</span> <br>
+                  To personalize the experience login or register now <br>
+
+                  <button class="choice-btn">
+                      <a href="/login">Login/Register</a>
+                  </button>
+              </p>
+              <h3>Contact Us</h3>
+              <h3>Our Privacy Policy</h3> 
+              <br>
+              <!-- <img src="img/offer.png" alt="Offer Image"> -->
+          </div>
+
+          {% endif %}
+      </div>
+  </div>
+
+  <div class="hamberger-section">
+    <ul class="nav-items hamberger-items">
+        <li class="nav-item hamberger-item">
+            <a href="#">Men</a>
+        </li>
+        <li class="nav-item hamberger-item">
+            <a href="#">Women</a>
+        </li>
+        <li class="nav-item hamberger-item">
+            <a href="#">Kids</a>
+        </li>
+        <li class="nav-item hamberger-item">
+            <a href="#">New collection</a>
+        </li>
+        <li class="nav-item hamberger-item">
+            <a href="#">Offers</a>
+        </li>
+    </ul>
+</div>
 </nav>
+
+

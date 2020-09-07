@@ -1,8 +1,24 @@
-<div class="row">
-	<div class="col-md-12">
-		<div>
-			<h4 class="footer-text">&copy; IITS Nachiketa &nbsp; &nbsp; <a href="/aboutus" style="font-size: 20px; float: left; margin-top: 5px;"> About Us</a></h4>
+{% load static %}
+<footer id="main-footer">
+	<div class="container">
+		<div class="footer-inner">
+			<ul class="footer-items">
+				<li class="footer-item">
+					<a href="#">Contact Us</a>
+				</li>
+				<li class="footer-item">
+					<a href="#">Careers</a>
+				</li>
+				<li class="footer-item">
+					<a href="/aboutus">About Us</a>
+				</li>
+				<li class="footer-item">
+					<a href="#"><img src="{% static 'image/facebook.png' %}" alt=""></a>
+					<a href="#"><img src="{% static 'image/instagram.png' %}" alt=""></a>
+					<a href="#"><img src="{% static 'image/twitter.png' %}" alt=""></a>
+				</li>
+			</ul>
+			<p> Copyright &copy; 2020 ESHOPPE PVT LTD. </p>
 		</div>
 	</div>
-</div>
-
+</footer>    

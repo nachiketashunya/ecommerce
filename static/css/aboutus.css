@@ -1,54 +1,115 @@
-#body {
-	padding-left: 20%;
-	padding-right: 20%;
+#about-us {
+    width: 70vw;
+    margin: 3rem auto;
+}
 
+ul {
+    list-style: none;
 }
 
 #about-header {
-	background-color: rgba(44 , 4, 75 , 0.3);
+    background-color: #7395ae;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
 }
 
-
-.header-text {
-	border-bottom: 2px solid #000000;
-	padding-left: 8px;
-
+h1.header-text {
+    color: white;
+    font-weight: 800;    
 }
 
-
-#text {
-	padding-left: 10%;
-	padding-right: 10%;
-	font-size: 125%;
-	text-align: justify;
-	line-height : 1.5em;
-	font-family: "Josefin Sans" , sans-serif ;
-
+#about-text {
+    padding: 1rem 2rem;
 }
 
-.areas-list {
-	margin-left: 20%;
+#about-text p {
+    font-size: 1.3rem;
+    font-weight: 500;
 }
 
-.areas-item {
-	font-family: "Times New Roman" ,monospace;
-	letter-spacing: 0.09em;
+#about-text ol.areas-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    list-style-position: inside;
 }
 
-strong.about-text {
-	font-style: italic;
+#about-text .areas-list li {
+    margin: 0.5rem 1rem;
+    font-weight: 800;
 }
 
-.about-text {
-	min-width: 100px;
+p.about-description {
+    border-top: 1px solid #e4e4e4;
+    padding: 0.7rem 2rem;
 }
 
-div.prime-box {
-	border: 1px solid #000;
-	padding-left: 30px;
-	width: 50%;
+.important-text {
+    margin-bottom: 1.3rem;
 }
 
-div.prime-content {
-	padding: 20px;
+div.important-text h3 {
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 0.3rem;
+    display: inline-block;
+    font-weight: 800;
+}
+
+ul.prime-membership {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+}
+
+ul.prime-membership li {
+    margin: 0.5rem 1rem;
+    padding: 0.7rem 1.3rem;
+    list-style: none;
+    background-color: #7395ae;
+    color: white;
+}
+
+@media (max-width: 960px) {
+    #about-us {
+        width: 90vw;
+        text-align: justify;
+    }
+    
+    #about-header .header-text {
+        font-size: 1.7rem;
+    }
+
+    #about-text p {
+        font-size: 1rem;
+    }
+
+    #about-text ol.areas-list {
+        grid-template-columns: 1fr;
+    }
+
+    ol.areas-list li {
+        margin-top: 0.3rem;
+        margin-bottom: 0.6rem;
+    }
+
+    p.about-description {
+        padding: 1rem 1rem;
+       
+    }
+
+    .important-text h3 {
+        font-size: 1.5rem;
+    }
+
+    ul.prime-membership {
+        display: block;
+    }
+
+    ul.prime-membership li {
+        padding: 0.5rem 1rem;
+    }
 }

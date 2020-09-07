@@ -22,19 +22,13 @@ def upload_profile_image(instance , filename):
 	return 'UserProfileImage/' + f"{new_filename}/{final_filename}"
 
 
-class UserProfile(models.Model):  #We inherit Model class so that it can act like a Model
+class UserProfile(models.Model):  #We inherit Model class to make this class a Model
 	name 			 = models.CharField(max_length = 80)  #max_length == required
-	phone_no 		 = models.CharField(max_length = 10, unique = True) #It can't be duplicated
+	phone_no 		 = models.CharField(max_length = 10, unique = True)
 	email		 	 = models.EmailField(unique = True)
 	gender 		     = models.CharField(max_length = 8, choices = GENDER_CHOICE)
 	password 		 = models.CharField(max_length = 20)
 	confirm_password = models.CharField( max_length = 20)
-	profile_image 	 = models.ImageField(
-											unique = True ,
-											blank = True , #blank -- Validation Related
-											null = True , #null -- Database Related
-											upload_to = upload_profile_image) #Calling Function
-
 
 
 	def __str__ ( self):  # Magic Method -- Converts model objects into string

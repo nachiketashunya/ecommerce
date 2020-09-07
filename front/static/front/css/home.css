@@ -1,0 +1,54 @@
+#home-container {
+    margin-bottom: 2rem;
+}
+
+#slide-section {
+    margin-bottom: 1rem;
+}
+
+#brands-section {
+    margin: 1rem 0.3rem;
+    display: flex;
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr); */
+    align-items: center;
+    justify-content: space-around;
+}
+
+#brands-section .brand-image {
+    width: 22%;
+}
+
+#brands-section .brand-image img {
+    width: 100%;
+} 
+
+#offer-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+#offer-section .offer-image {
+    width: 49%;
+}
+
+#offer-section .offer-image img {
+    width: 100%;
+}
+
+#deal-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0.4rem;
+}
+
+#deal-section .deal-image {
+    width: 99%;
+}
+
+#deal-section .deal-image img {
+    width: 100%;
+}

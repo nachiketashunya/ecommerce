@@ -1,66 +1,30 @@
 {% extends 'base/base.html' %}
 {% block content %}
-{% load humanize %}  <!-- to user human friendly content -->
+{% load humanize %}  <!-- to human friendly content -->
 
-<div class="row">
-    <div class="col-md-3">
-    	<p style="margin-left: 5px;"><a href="/productpage"> All </a></p>
-    	{% for subcategory in subcategory %}
 
-    	<p style="margin-left: 5px;">
-    		<a href="/productcategory/{{subcategory.id}}" id="subcategory-item">
-	    		{{subcategory.category_name}} - 
-	    		{{subcategory.subcategory_name}}
-    		</a>
-    	</p>
-
-    	{% endfor %}
-
-    </div>
-    <div class="col-md-9">
-    	<div class="row">
+<div class="col-md-11 col-sm-11 col-xs-11 mx-auto">
+	<div class="row">
+		<div class="card-deck">
 			{% for product in products %}
-			<div class="col-md-3">
-				<div class="card" style="width: 100%; margin-top: 7px;">
-					<img src="{{product.image.url}}" class="card-img-top" alt="...">
-					<div class="card-body">
-					    <h6 class="card-title" style="font-size: 15px;">{{product.title|truncatewords:3}}</h6>
-					    	
-					    <!-- truncatewords , truncate the words by specified value -->
-
-					    <p class="card-text" style="font-size: 14px; ">{{product.description|truncatewords:2 }} </p>
-					    <p class="card-text"><strong class="product-price"> &#8377; {{product.price|intcomma }} </strong></p>
-					    <a href="/productdetails/{{product.id}}">
-						    <button class="btn btn-primary btn-sm" style="display: inline-block; float: left; font-size: 12px;">
-						    	View Details 
-						    </button>
-					    </a>
-
-					    <form method="POST" action = "/wishlist_update/">
-					    	{% csrf_token %}
-
-					    	<input type="hidden" name="next" value="{{ next_url }}">
-
-					    	<input type="hidden" name="product_id" value="{{ product.id }}"> <!-- this will be used in view function -->
-
-					    	{% if not product in object.products.all %}
-
-					    	<button class="btn btn-success btn-sm" style="display: inline-block; float: right; font-size: 12px;"> Wishlist </button>
-
-					    	{% else %}
-
-					    	<button class="btn btn-danger btn-sm" style="display: inline-block; float: right;
-					    	font-size: 12px;"> Wishlisted </button>
-
-					    	{% endif %}
-					    </form>
-					</div>
-		        </div>
-		    </div>
-		    {% endfor %}
-	 	</div>
-    </div>
+			<div class="col-md-3 col-sm-5 col-xs-5">
+			<div class="card mb-4 mt-2">
+				<img class="card-img-top" style="height: 40vh;" src="{{product.image.url}}" alt="Card image cap">
+				<div class="card-body">
+				<h5 class="card-title">{{product.title|truncatewords:3}}</h5>
+				<p class="card-text small">{{product.description|truncatewords:8}}</p>
+				<p class="card-text"><strong>&#8377; {{product.price|intcomma }}</strong></p>
+				</div>
+				<div class="card-footer text-center" style="background-color: #7395ae;">
+					<a href="/productdetails/{{product.id}}">
+						<span style="color: white;">View Details</span>
+					</a>
+				</div>
+			</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
 </div>
-
 
 {% endblock %}

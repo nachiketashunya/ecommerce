@@ -1,0 +1,41 @@
+#registration-form-container {
+    width: 55vw;
+    margin: 1rem auto;
+    box-shadow: 20px 20px 20px #e3e3e3;
+    background-color: #fefefe;
+    font-family: "Roboto", "Open Sans", sans-serif;
+}
+
+#registration-form-content {
+    padding: 1rem 2rem;
+    width: 95%;
+    margin: auto;
+}
+
+
+#registration-form input[type="text"],
+#registration-form input[type="password"],
+select[name="gender"] {
+    margin-bottom: 0.8rem;
+}
+
+
+#registration-form #submit-btn {
+    margin-top: 0.5rem;
+    background-color: #557a95;
+    color: white;
+    font-family: "Roboto", "Open Sans", sans-serif;
+}
+
+#registration-form #submit-btn:hover {
+    opacity: 0.6;
+}
+
+
+@media (max-width: 960px) {
+    #registration-form-container {
+        width: 90vw;
+        background-color: #fff;
+        box-shadow: none;
+    }
+}

@@ -7,47 +7,54 @@
 
     <title> {{ title }} </title>  <!-- this is key in every context -->
 
-    <!-- Bootstrap CSS -->
-
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/success.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/aboutus.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    
+    <!-- accounts css -->
+    <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/registration.css' %}">
 
-    <!-- fonts -->
+    <!-- cart css -->
+    <link rel="stylesheet" href="{% static 'cart/css/cart.css' %}">
+    <link rel="stylesheet" href="{% static 'cart/css/checkout.css' %}">
+    <link rel="stylesheet" href="{% static 'cart/css/card.css' %}">
 
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600&display=swap" rel="stylesheet">
+    <!-- order details css -->
+    <link rel="stylesheet" href="{% static 'order/css/orderDetails.css' %}">
 
+    <!-- front css --> 
+    <link rel="stylesheet" href="{% static 'front/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'front/css/productDetails.css' %}">
+
+    <!-- base css -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href='{% static "css/navbar.css" %}'>
+    <link rel="stylesheet" href="{% static 'css/success.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aboutus.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 
     {% include 'base/css.html' %}
 
   </head>
 
 <body>
-  <div class="container-fluid page-container content-wrap">
-  {% include 'base/navbar.html' %}
+  <div class="page-container web-container">
+    <div class="content-wrap">
+      {% include 'base/navbar.html' %}
 
-  {% include 'base/header.html' %}
+      <!-- {% include 'base/header.html' %} -->
 
-	{% block content %}   <!-- we can specify any other name for block and endblock to enhance readbility -->
+      {% block content %}   
+      <!-- we can specify any other name for block and endblock to enhance readbility -->
 
-	{% endblock %}
+      {% endblock %}
 
-  <div id="footer">
-	{% include 'base/footer.html' %}
+      {% include 'base/footer.html' %}
+  
+    </div>   
+
+    {% include 'base/js.html' %}
+    
   </div>
-
-	{% include 'base/js.html' %}
-</div>
-
 </body>
-
 </html>
