@@ -237,6 +237,7 @@ input[type="search"] {
         width: 50vw;
         height: 50vh;
         border-radius: 5px;
+        top: 50px;
     }
 
     .user-section .content {
@@ -277,6 +278,7 @@ input[type="search"] {
 
     .show-hamberger-content {
         display: block;
+        /* top: 6.3vh; */
     }
 }
 

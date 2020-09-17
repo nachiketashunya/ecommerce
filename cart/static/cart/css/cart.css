@@ -51,7 +51,7 @@ span.tax-info {
 
 @media (max-width: 960px) {
     #cart-container {
-        width: 90vw;
+        width: 99vw;
     }
 
     #product-image {
@@ -66,13 +66,14 @@ span.tax-info {
     }
     
     #cart-items-table tbody td {
-        font-size: 0.8rem;
+        font-size: 1rem;
         font-weight: 600;
+        padding-left: 0rem;
         /* font-family: "Roboto", "Open Sans", sans-serif; */
     }
     
     #cart-items-table tbody td.pricing {
-        padding-left: 3rem;
+        padding-left: 0rem;
         font-size: 1rem;
         font-weight: 600;
         /* font-family: Arial, Helvetica, sans-serif; */

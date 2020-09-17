@@ -37,14 +37,16 @@ def register_user(request):
 			except:
 				return redirect('../registration')
 
-	context = { 'forms' : userprofileform }  #key will be used in template
+	context = { 'forms' : userprofileform,
+				'title' : "Registration" 
+			}  
 
 
 	return render( request, 'accounts/register_user.html', context)
 
 
 def login(request):
-	loginform = LoginForm( request.POST or None  , label_suffix = "" , auto_id = 'id_for_%s')  #inititalising form
+	loginform = LoginForm( request.POST or None)  #inititalising form
 	next_ = request.GET.get('next') #getting next_url
 	next_post = request.POST.get('next')
 	redirect_path = next_ or next_post or None
@@ -79,7 +81,7 @@ def login(request):
 
 
 	context = { 'form': loginform,
-				'title' : 'login'
+				'title' : 'Login'
 			}
 
 

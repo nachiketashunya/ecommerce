@@ -35,8 +35,6 @@
 
 #address-reuse-section {
     margin: 1rem 5rem;
-    border: 1px solid #d3d3d3;
-    border-radius: 5px;
     padding: 0.5rem 2rem;
     width: 40%;
 
@@ -44,6 +42,9 @@
 
 #address-reuse-form {
     text-align: center;
+    border: 1px solid hsl(0, 0%, 83%);
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 #radio-btn-text {
@@ -52,14 +53,15 @@
 }
 
 #address-reuse-form #submit-btn {
-    margin: 2rem 0.3rem 1rem 0.3rem;
+    margin-top: 2rem;
 }
 
 
 @media (max-width: 960px) {
     #address-form-container {
+        width: 100%;
         display: block;
-        margin: 1rem 0.5rem;
+        margin: 1rem 0rem;
     }
 
     #address-form-section {
@@ -74,7 +76,13 @@
 
     
     #address-reuse-section {
-        margin: 1rem 1rem;
-        padding: 0.5rem 2rem;
+        width: 100%;
+        margin: 2rem 0rem;
+        padding: 0.2rem;  
+    }
+
+    
+    #address-reuse-form {
+        margin: 0rem 0.9rem;
     }
 }

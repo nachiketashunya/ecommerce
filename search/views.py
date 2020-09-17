@@ -19,7 +19,8 @@ def search(request):
 		products = Product.objects.filter(lookups).distinct		#distince is used to prevent duplication
 		context = {
 					'products' : products,
-					'subcategory' : subcategory
+					'subcategory' : subcategory,
+					'title' : "Products"
 				}
 
 	else:
@@ -27,7 +28,8 @@ def search(request):
 
 		context = {
 					'products' : products,
-					'subcategory' : subcategory
+					'subcategory' : subcategory,
+					'title' : 'Products'
 				}
 
 	return render(request, 'front/productpage.html', context)

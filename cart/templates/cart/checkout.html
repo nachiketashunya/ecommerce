@@ -12,7 +12,7 @@
 
 				<input type="hidden" value="{{next_url}}" name="next">
 
-				<input type="submit" value="Login" id="submit-btn" class="btn btn-block">
+				<input type="submit" value="Login" class="btn btn-block submit-btn">
 			</form>
 		</div>
 
@@ -20,12 +20,12 @@
 
 		<div id="guest-login-form-content">
 			<!-- <p id="guest-text">You can login as Guest</p> -->
-			<form id="guest-login-form" method="POST" action="/guest_register/">
+			<form id="guest-login-form" method="POST" action="/guestregister/">
 				{% csrf_token %}
 				{{ guestform }}
 
 				<input type="hidden" value="{{next_url}}" name="next">
-				<input type="submit" value="Guest Login" id="submit-btn" class="btn btn-block">
+				<input type="submit" value="Guest Login" class="btn btn-block submit-btn">
 			</form>
 		</div>
 	</div>
@@ -198,18 +198,18 @@
 							<h6 class="my-0">{{ product.title }}</h6>
 							<small class="text-muted">{{ product.description|truncatewords:10 }}</small>
 						  </div>
-						  <span class="text-muted"> &#8377; {{ product.price }}</span>
+						  <span class="text-muted"> &#8377;{{ product.price }}</span>
 						</li>
 				
 						{% endfor %}
 				
 						<li class="list-group-item d-flex justify-content-between">
 						  <span> Shipping Charges  </span>
-						  <strong> &#8377; {{ object.shipping_total }}</strong>
+						  <strong> &#8377;{{ object.shipping_total }}</strong>
 						</li>
 						<li class="list-group-item d-flex justify-content-between">
 						  <span>Total </span>
-						  <strong> &#8377; {{ object.total }}</strong>
+						  <strong> &#8377;{{ object.total }}</strong>
 						</li>
                     </ul>
 

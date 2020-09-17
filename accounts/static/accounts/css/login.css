@@ -38,8 +38,8 @@
     margin-bottom: 0.6rem;
 }
 
-#login-form #submit-btn,
-#guest-login-form #submit-btn {
+#login-form .submit-btn,
+#guest-login-form .submit-btn {
     border: 1px solid #ccc;
     background-color: #557a95;
     color: white;
@@ -73,7 +73,7 @@ span#separator {
 }
 
 #registration-btn:hover,
-#submit-btn:hover {
+.submit-btn:hover {
     opacity: 0.5;
 }
 
@@ -107,7 +107,7 @@ p.message-text {
 
 @media (max-width: 960px) {
     #login-form-container {
-        width: 80vw;
+        width: 99vw;
         border: none;
     }
 

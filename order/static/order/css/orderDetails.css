@@ -30,7 +30,8 @@
 }
 
 #order-details #content-2 {
-    margin: 1.1rem 0.4rem;
+    margin: 0rem 0.4rem;
+    padding-top: 1.1rem;
 }
 
 #order-details .payment-details,
@@ -67,6 +68,10 @@
 }
 
 @media (max-width: 960px) {
+    #order-details-container {
+        width: 99vw;
+    }
+
     #order-details {
         grid-template-columns: 1fr;
     }
@@ -77,6 +82,12 @@
 
     #order-details #content-2 {
         border-bottom: 1px solid #e4e4e4;
+    }
+
+        
+    #order-details #content-1,
+    #order-details #content-2 {
+        padding: 0.2rem 0rem;
     }
 
     #order-details .payment-details,

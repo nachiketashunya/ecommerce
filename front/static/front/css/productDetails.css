@@ -89,6 +89,10 @@
 }
 
 @media (max-width: 960px) {
+    #product-details-container {
+        width: 99vw;
+    }
+    
     #product-details {
         flex-direction: column;
         align-items: center;

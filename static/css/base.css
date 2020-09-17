@@ -80,3 +80,10 @@ div.order-successful {
 pre {
 	white-space: pre-wrap;
 }
+
+@media (max-width: 960px) {
+	div.order-successful {
+		width: 90%;
+	}
+
+}

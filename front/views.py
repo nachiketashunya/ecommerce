@@ -60,7 +60,7 @@ def productdetails(request, id):
 				review.save()
 				return redirect('/productdetails/<id>')
 			except:
-				return redirect('/unsuccessful')
+				return redirect('/unsuccesful')
 
 
 
@@ -72,7 +72,7 @@ def productdetails(request, id):
 		reviews = paginator.get_page(page)
 		cart_obj, new_obj = Cart.objects.new_or_get(request)
 
-		context = { 'title' : 'productdetails',
+		context = { 'title' : 'Product Details',
 		            'product': product ,
 		            'form' : form,
 		            'reviews' : reviews,
@@ -155,7 +155,7 @@ def profile(request):
 
 # view function to show about us
 def about_us(request):
-	return render(request , 'base/about.html')
+	return render(request , 'base/about.html', { "title" : "About Us"})
 
 
 

@@ -109,13 +109,14 @@ def checkout(request):
 				'address_qs' : address_qs,	#this is the queryset of addresses
 				'object' : order_obj,
 				'has_card': has_card,
-				'cart' : cart_obj
+				'cart' : cart_obj,
+				'title' : "Checkout"
 			}
 
 	return render(request, 'cart/checkout.html' , context)
 
 #View function to show success message
 def successful(request):
-	return render(request, 'cart/successful.html' )
+	return render(request, 'cart/successful.html', { "title" : "Order Successful"} )
 
 

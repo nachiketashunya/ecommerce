@@ -34,8 +34,15 @@ select[name="gender"] {
 
 @media (max-width: 960px) {
     #registration-form-container {
-        width: 90vw;
+        width: 99vw;
         background-color: #fff;
         box-shadow: none;
+    }
+
+    
+    #registration-form-content {
+        padding: 1rem 1rem;
+        width: 99%;
+        margin: auto;
     }
 }

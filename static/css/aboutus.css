@@ -75,8 +75,12 @@ ul.prime-membership li {
 
 @media (max-width: 960px) {
     #about-us {
-        width: 90vw;
+        width: 99vw;
         text-align: justify;
+    }
+
+    #about-text {
+        padding: 1rem;
     }
     
     #about-header .header-text {
